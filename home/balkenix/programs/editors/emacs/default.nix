@@ -1,20 +1,14 @@
-{pkgs, ...}: let
-  my_emacs = pkgs.emacsWithPackagesFromUsePackage {
-    config = ./init.el;
-    defaultInitFile = true;
-    package = pkgs.emacs-pgtk;
-    alwaysEnsure = true;
-
-    extraEmacsPackages = epkgs:
-      with epkgs; [
-        use-package
-        async
-        avy
-      ];
-  };
-in {
+{pkgs, ...}: {
   programs.emacs = {
     enable = true;
-    package = my_emacs;
-  };
+    package = pkgs.emacs-pgtk;
+    extraConfig = "${builtins.readFile ./init.el}";
+    extraPackages = epkgs: with epkgs; [
+      use-package
+      async
+      avy
+      kanagawa-theme
+      doom-modeline
+    ];
+  };	 
 }

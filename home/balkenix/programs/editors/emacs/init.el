@@ -1,5 +1,5 @@
 (require 'use-package)
-(set use-package-always-ensure t)
+(setq use-package-always-ensure t)
 
 (use-package kanagawa-theme
   :init
