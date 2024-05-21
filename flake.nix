@@ -45,22 +45,23 @@
             ];
           };
         };
+
+        overlays.additions = final: prev: {
+          kanagawa-gtk-theme = import ./pkgs/kanagawa-gtk-theme.nix;
+        };
       };
 
       perSystem = {
+        self,
         pkgs,
         system,
         ...
       }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
-          overlays = [inputs.emacs-overlay.overlays.default] ;
+          overlays = [ inputs.emacs-overlay.overlays.default self.overlays.additions ] ;
         };
 
-        packages.default = {
-          kanagawa-gtk-theme = pkgs.callPackage ./pkgs/kanagawa-gtk-theme.nix;
-        };
-	
         formatter = pkgs.alejandra;
       };
 
