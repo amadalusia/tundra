@@ -1,8 +1,9 @@
-{pkgs, ...}@attrs: {
+{pkgs, ...} @ attrs: {
   imports = [
-    ./plugins.nix attrs
+    ./plugins.nix
+    attrs
   ];
-  
+
   programs.zsh = {
     enable = true;
   };

@@ -58,20 +58,20 @@ in {
       colors = kanagawa;
       font = {
         normal = {
-	  inherit family;
-	  style = "Regular";
+          inherit family;
+          style = "Regular";
         };
         bold = {
-	  inherit family;
-	  style = "Bold";
+          inherit family;
+          style = "Bold";
         };
         italic = {
-	  inherit family;
-	  style = "Italic";
+          inherit family;
+          style = "Italic";
         };
         bold_italic = {
-	  inherit family;
-	  style = "Bold Italic";
+          inherit family;
+          style = "Bold Italic";
         };
 
         size = 13.0;
