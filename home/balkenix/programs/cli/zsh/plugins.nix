@@ -2,7 +2,7 @@
   programs.zsh.plugins = [
     {
       name = "agkozak-zsh-prompt";
-      src = pkgs.fetchFromGithub {
+      src = pkgs.fetchFromGitHub {
         owner = "agkozak";
         repo = "agkozak-zsh-prompt";
         rev = "refs/tags/v3.11.3";
@@ -11,7 +11,7 @@
     }
     {
       name = "enhancd";
-      src = pkgs.fetchFromGithub {
+      src = pkgs.fetchFromGitHub {
         owner = "b4b4r07";
         repo = "enhancd";
         rev = "v2.2.1";
