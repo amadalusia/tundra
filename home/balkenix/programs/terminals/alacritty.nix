@@ -72,6 +72,8 @@ in {
 	  inherit family;
 	  style = "Bold Italic";
         };
+
+        size = 13.0;
       };
     };
   };
