@@ -1,3 +1,7 @@
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+
 (require 'use-package)
 (setq use-package-always-ensure t)
 
@@ -17,4 +21,3 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
-
