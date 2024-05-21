@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGithub,
+  ...
 }: {
   programs.zsh.plugins = [
     {
