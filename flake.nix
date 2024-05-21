@@ -54,9 +54,13 @@
       }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
-          overlays = [inputs.emacs-overlay.overlays.default];
+          overlays = [inputs.emacs-overlay.overlays.default] ;
         };
 
+        packages.default = {
+          kanagawa-gtk-theme = pkgs.callPackage ./pkgs/kanagawa-gtk-theme.nix;
+        };
+	
         formatter = pkgs.alejandra;
       };
 
