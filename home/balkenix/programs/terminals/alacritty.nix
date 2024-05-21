@@ -1,4 +1,5 @@
 _: let
+  family = "IosevkaTerm Nerd Font Mono";
   kanagawa = {
     primary = {
       background = "0x1f1f28";
@@ -54,6 +55,24 @@ in {
         title = "Alacritty";
       };
       colors = kanagawa;
+      fonts = {
+        normal = {
+	  inherit family;
+	  style = "Regular";
+        };
+        bold = {
+	  inherit family;
+	  style = "Bold";
+        };
+        italic = {
+	  inherit family;
+	  style = "Italic";
+        };
+        bold_italic = {
+	  inherit family;
+	  style = "Bold Italic";
+        };
+      };
     };
   };
 }
