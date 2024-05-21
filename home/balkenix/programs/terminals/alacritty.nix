@@ -55,7 +55,7 @@ in {
         title = "Alacritty";
       };
       colors = kanagawa;
-      fonts = {
+      font = {
         normal = {
 	  inherit family;
 	  style = "Regular";
