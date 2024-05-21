@@ -15,7 +15,7 @@
         owner = "b4b4r07";
         repo = "enhancd";
         rev = "v2.2.1";
-	sha256 = "r0RkHdLUlZYnN/VJlXj6a20LRz/oxpuLtKZyl4BMCkc=";
+        sha256 = "r0RkHdLUlZYnN/VJlXj6a20LRz/oxpuLtKZyl4BMCkc=";
       };
     }
   ];

@@ -6,6 +6,7 @@
   lib,
   pkgs,
   inputs,
+  outputs,
   ...
 }: {
   imports = [
@@ -36,6 +37,7 @@
   # overlays
   nixpkgs.overlays = [
     inputs.emacs-overlay.overlays.default
+    outputs.overlays.default
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -113,7 +115,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs outputs;};
 
     users.balkenix = import ../../home/balkenix;
   };
