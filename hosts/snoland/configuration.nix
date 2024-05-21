@@ -96,14 +96,18 @@
   services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.balkenix = {
-    hashedPassword = "$y$j9T$wjqqMyyj3CiP..czBWZCS0$k/8CZgUTxIAkzEPT872.37F2RrDFhV0QiUEwHtgN1E1";
-    isNormalUser = true;
-    extraGroups = ["video" "audio" "wheel"]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+
+    users.balkenix = {
+      useDefaultShell = true;
+      isNormalUser = true;
+      extraGroups = ["video" "audio" "wheel"];
+      packages = with pkgs; [
+        firefox
+        tree
+      ];
+    };
   };
 
   home-manager = {
@@ -113,6 +117,8 @@
 
     users.balkenix = import ../../home/balkenix;
   };
+
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
