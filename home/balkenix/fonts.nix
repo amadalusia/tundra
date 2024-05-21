@@ -1,9 +1,9 @@
 {pkgs, ...}: let
-  nerdfonts = pkgs.nerdfonts override {
+  nerdfonts = (pkgs.nerdfonts.override {
     fonts = [
       "IosevkaTerm"
     ];
-  };
+  });
 in {
   fonts.fontconfig.enable = true;
 
