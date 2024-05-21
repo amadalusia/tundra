@@ -1,7 +1,6 @@
-{pkgs, ...} @ attrs: {
+_: {
   imports = [
     ./plugins.nix
-    attrs
   ];
 
   programs.zsh = {

@@ -1,12 +1,8 @@
-{
-  lib,
-  fetchFromGithub,
-  ...
-}: {
+{pkgs, ...}: {
   programs.zsh.plugins = [
     {
       name = "agkozak-zsh-prompt";
-      src = fetchFromGithub {
+      src = pkgs.fetchFromGithub {
         owner = "agkozak";
         repo = "agkozak-zsh-prompt";
         rev = "refs/tags/v3.11.3";
@@ -15,7 +11,7 @@
     }
     {
       name = "enhancd";
-      src = fetchFromGithub {
+      src = pkgs.fetchFromGithub {
         owner = "b4b4r07";
         repo = "enhancd";
         rev = "v2.2.1";
