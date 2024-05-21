@@ -10,7 +10,8 @@ _: let
       black = "0x090618";
       red = "0xc34043";
       green = "0x76946a";
-      blue = "0xc0a36e";
+      yellow = "0xc0a36e";
+      blue = "0x7e9cd8";
       magenta = "0x957fb8";
       cyan = "0x6a9589";
       white = "0xc8c093";
