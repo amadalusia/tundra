@@ -31,6 +31,7 @@
     };
     "org/gnome/desktop/background" = {
       picture-uri = "${../../wallpapers/cafe.jpg}";
+      picture-uri-dark = "${../../wallpapers/cafe.jpg}";
       picture-options = "scaled";
     };
   };
