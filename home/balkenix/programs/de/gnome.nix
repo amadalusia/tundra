@@ -73,7 +73,7 @@
       picture-options = "scaled";
     };
 
-    "/org/gnome/desktop/input-sources/" = {
+    "/org/gnome/desktop/input-sources" = {
       xkb-options = "['terminate:ctrl_alt_bksp', 'lv3:ralt_switch', 'caps:ctrl_modifier']";
     };
   };
