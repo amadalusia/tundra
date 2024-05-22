@@ -5,6 +5,7 @@
     gnomeExtensions.user-themes
     gnomeExtensions.vitals
     gnomeExtensions.pop-shell
+    gnomeExtensions.rounded-window-corners
   ];
 
   dconf.settings = {
@@ -18,6 +19,7 @@
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
         "pop-shell@system76.com"
+        "rounded-window-corners@yilozt"
       ];
       favorite-apps = [
         "firefox.desktop"
