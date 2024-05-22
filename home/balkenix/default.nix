@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
+    ./programs/de/gnome.nix
     ./programs/editors/emacs
     ./programs/cli/zsh
-
     ./programs/terminals/alacritty.nix
     ./gtk.nix
     ./fonts.nix

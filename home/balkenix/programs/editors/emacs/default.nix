@@ -10,7 +10,7 @@
         avy
         kanagawa-theme
         doom-modeline
-	nix-mode
+        nix-mode
       ];
   };
 }

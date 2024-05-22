@@ -114,12 +114,12 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs;};
     users.balkenix = import ../../home/balkenix;
   };
 
   programs.zsh.enable = true;
-  
+
   environment.systemPackages = with pkgs; [
     git
     vim
