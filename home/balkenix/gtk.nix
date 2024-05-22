@@ -3,7 +3,7 @@ in {
   gtk = {
     enable = true;
     theme = {
-      name = "Juno";
+      name = "Juno-palenight";
       package = pkgs.juno-theme;
     };
   };

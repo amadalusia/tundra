@@ -32,10 +32,6 @@
     "org/gnome/shell/extensions/user-theme" = {
       name = "Juno-palenight";
     };
-
-    "org/gnome/desktop/interface" = {
-      gtk-theme = "Juno-palenight";
-    };
     
     "org/gnome/shell/extensions/pop-shell" = {
       hint-color-rgba =  "'rgba(147, 138, 169, 1)'";
