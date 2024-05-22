@@ -37,6 +37,10 @@
   # overlays
   nixpkgs.overlays = [
     inputs.emacs-overlay.overlays.default
+
+    outputs.overlays.unstable
+    outputs.overlays.modifications
+    outputs.overlays.additions
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -114,7 +118,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs outputs;};
     backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
   };
