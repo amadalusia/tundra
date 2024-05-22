@@ -29,11 +29,11 @@
       ];
     };
 
-    "/org/gnome/shell/extensions/user-theme" = {
+    "org/gnome/shell/extensions/user-theme" = {
       name = "Juno-palenight";
     };
 
-    "/org/gnome/desktop/interface" = {
+    "org/gnome/desktop/interface" = {
       gtk-theme = "Juno-palenight";
     };
     
@@ -73,7 +73,7 @@
       picture-options = "scaled";
     };
 
-    "/org/gnome/desktop/input-sources" = {
+    "org/gnome/desktop/input-sources" = {
       xkb-options = "['terminate:ctrl_alt_bksp', 'lv3:ralt_switch', 'caps:ctrl_modifier']";
     };
   };
