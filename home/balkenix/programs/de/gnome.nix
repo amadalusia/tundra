@@ -4,7 +4,7 @@
     gnomeExtensions.space-bar
     gnomeExtensions.user-themes
     gnomeExtensions.vitals
-    gnomeExtensions.pop-shell
+    gnomeExtensions.forge
   ];
 
   dconf.settings = {
@@ -17,7 +17,7 @@
         "space-bar@luchrioh"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
-        "pop-shell@system76.com"
+        "forge@jmmaranan.com"
       ];
       favorite-apps = [
         "firefox.desktop"
