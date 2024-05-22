@@ -2,6 +2,9 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
+(add-to-list 'default-frame-alist
+             '(font . "IosevkaTerm Nerd Font Mono-13"))
+
 (require 'use-package)
 (setq use-package-always-ensure t)
 
@@ -21,3 +24,17 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
+
+(use-package nix-mode
+  :init ("\\.nix\\'" "\\.nix.in\\'"))
+(use-package nix-drv-mode
+  :ensure nix-mode
+  :mode "\\.drv\\'")
+(use-package nix-shell
+  :ensure nix-mode
+  :commands (nix-shell-unpack nix-shell-configure nix-shell-build))
+(use-package nix-repl
+  :ensure nix-mode
+  :commands (nix-repl))
+(require 'nix-mode)
+(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))

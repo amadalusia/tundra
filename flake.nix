@@ -39,7 +39,7 @@
       flake = {
         nixosConfigurations = {
           snoland = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
+            specialArgs = {inherit inputs;};
             modules = [
               ./hosts/snoland/configuration.nix
             ];
