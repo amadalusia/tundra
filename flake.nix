@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     disko = {
@@ -45,6 +46,8 @@
             ];
           };
         };
+
+        overlays = import ./overlays {inherit inputs;};
       };
 
       perSystem = {
