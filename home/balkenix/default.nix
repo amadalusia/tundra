@@ -4,7 +4,6 @@
     ./programs/cli/zsh
 
     ./programs/terminals/alacritty.nix
-    ./gtk.nix
     ./fonts.nix
   ];
 
