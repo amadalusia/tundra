@@ -26,7 +26,7 @@
   :init (doom-modeline-mode 1))
 
 (use-package nix-mode
-  :init ("\\.nix\\'" "\\.nix.in\\'"))
+  :mode ("\\.nix\\'" "\\.nix.in\\'"))
 (use-package nix-drv-mode
   :ensure nix-mode
   :mode "\\.drv\\'")
