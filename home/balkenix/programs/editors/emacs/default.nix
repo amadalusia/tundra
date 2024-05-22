@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs-unstable;
+    package = pkgs.emacs;
     extraConfig = builtins.readFile ./init.el;
     extraPackages = epkgs:
       with epkgs; [
