@@ -23,11 +23,14 @@
         "firefox.desktop"
         "emacs.desktop"
         "alacritty.desktop"
-        "vesktopdesktop.desktop"
+        "vesktop.desktop"
       ];
     };
     "org/gnome/desktop/wm/preferences" = {
       workspace-names = ["Main" "Browsing" "Coding" "Messaging"];
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = "${../../wallpapers/cafe.jpg}";
     };
   };
 }
