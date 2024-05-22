@@ -58,7 +58,10 @@
       }: {
         _module.args.pkgs = import nixpkgs {
           inherit system;
-          overlays = [inputs.emacs-overlay.overlays.default];
+          overlays = [
+	    inputs.emacs-overlay.overlays.default
+	    self'.overlays.default
+	  ];
         };
         formatter = pkgs.alejandra;
       };
