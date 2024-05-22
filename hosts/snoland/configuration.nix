@@ -115,6 +115,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
   };
 
