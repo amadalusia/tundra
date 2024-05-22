@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  kanagawa-gtk-theme = pkgs.callPackage ../../pkgs/kanagawa-gtk-theme.nix { };
+  kanagawa-gtk-theme = pkgs.callPackage ../../pkgs/kanagawa-gtk-theme.nix {pkgs, ...};
 in {
   gtk = {
     enable = true;
