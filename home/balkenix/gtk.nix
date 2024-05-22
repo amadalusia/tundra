@@ -5,7 +5,7 @@ in {
     enable = true;
     theme = {
       name = "Kanagawa-B-LB";
-      package = "kanagawa-gtk-theme";
+      package = kanagawa-gtk-theme;
     };
   };
 }
