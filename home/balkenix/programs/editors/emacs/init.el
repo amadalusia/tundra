@@ -36,5 +36,3 @@
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
-(require 'nix-mode)
-(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))
