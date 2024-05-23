@@ -73,6 +73,8 @@
 
       move-to-workspace-4 = "['<Super><Shift>4']";
       switch-to-workspace-4 = ["<Super>4"];
+
+      close = [ "<Shift><Super>q" ];
     };
 
     "org/gnome/shell/keybindings" = {
