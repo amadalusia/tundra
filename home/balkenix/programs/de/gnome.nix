@@ -11,6 +11,10 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      monospace-font-name = "IosevkaTerm Nerd Font Mono 10";
+      font-name = "Inter 11";
+      titlebar-font = "Inter 11";
+      font-antialiasing = "rgba";
     };
     "org/gnome/shell" = {
       disable-user-extensions = false;
@@ -30,7 +34,7 @@
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Juno-palenight";
+      name = "Kanagawa-B-LB";
     };
     
     "org/gnome/shell/extensions/pop-shell" = {
