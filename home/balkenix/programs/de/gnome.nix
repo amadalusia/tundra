@@ -36,7 +36,7 @@
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Kanagawa-B-LB";
+      name = "Kanagawa-BL-LB";
     };
     
     "org/gnome/shell/extensions/pop-shell" = {

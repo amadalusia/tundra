@@ -8,7 +8,7 @@ in {
     };
     iconTheme = {
       name = "oomox-Kanagawa";
-      package = null;
+      package = pkgs.unstable.kanagawa-icon-theme;
     };
     cursorTheme = {
       name = "GoogleDot-Black";
