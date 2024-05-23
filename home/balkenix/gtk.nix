@@ -7,7 +7,7 @@ in {
       package = pkgs.unstable.kanagawa-gtk-theme;
     };
     iconTheme = {
-      name = "oomox-Kanagawa";
+      name = "Kanagawa";
       package = pkgs.unstable.kanagawa-icon-theme;
     };
     cursorTheme = {
