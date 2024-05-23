@@ -77,5 +77,11 @@
       sources = [ (lib.gvariant.mkTuple [ "xkb" "gb" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:ctrl_modifier" ];
     };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "${pkgs.alacritty}/bin/alacritty";
+      name = "Launch terminal";
+    };
   };
 }
