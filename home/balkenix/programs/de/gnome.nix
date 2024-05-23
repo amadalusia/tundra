@@ -98,5 +98,10 @@
       command = "${pkgs.alacritty}/bin/alacritty";
       name = "Launch terminal";
     };
+
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      sigma = 100;
+      brightness = 0.75;
+    };
   };
 }
