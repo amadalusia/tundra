@@ -3,6 +3,7 @@
     ./programs/de/gnome.nix
     ./programs/editors/emacs
     ./programs/cli/zsh
+    ./programs/cli/git.nix
     ./programs/terminals/alacritty.nix
     ./programs/misc/rofi
     ./gtk.nix
