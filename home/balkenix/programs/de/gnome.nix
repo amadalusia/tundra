@@ -58,6 +58,7 @@
     };
 
     "org/gnome/desktop/wm/preferences" = {
+      num-workspaces = 4;
       workspace-names = ["Main" "Browsing" "Coding" "Messaging"];
       button-layout = "appmenu:minimize,maximize,close";
     };
