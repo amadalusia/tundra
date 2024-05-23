@@ -1,7 +1,7 @@
 {pkgs, lib, ...}: {
   home.packages = (with pkgs; [
     gnome.gnome-tweaks
-  ];) ++ (with pkgs.gnomeExtensions; [
+  ]) ++ (with pkgs.gnomeExtensions; [
     space-bar
     user-themes
     vitals
