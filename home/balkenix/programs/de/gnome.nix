@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   home.packages = with pkgs; [
     gnome.gnome-tweaks
     gnomeExtensions.space-bar
@@ -70,7 +70,7 @@
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "gb" ]) ];
+      sources = [ (lib.gvariant.mkTuple [ "xkb" "gb" ]) ];
       xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:ctrl_modifier" ];
     };
   };

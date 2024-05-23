@@ -1,21 +1,4 @@
 {pkgs, ...}: {
-  home.packages = with pkgs.tree-sitter-grammars; [
-    tree-sitter-c
-    tree-sitter-go
-    tree-sitter-zig
-    tree-sitter-nix
-    tree-sitter-tsx
-    tree-sitter-jsx
-    tree-sitter-rust
-    tree-sitter-lua
-    tree-sitter-cpp
-    tree-sitter-elisp
-    tree-sitter-python
-    tree-sitter-svelte
-    tree-sitter-markdown
-    tree-sitter-javascript
-    tree-sitter-typescript
-  ];
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;

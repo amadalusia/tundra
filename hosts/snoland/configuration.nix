@@ -6,7 +6,6 @@
   lib,
   pkgs,
   inputs,
-  self,
   ...
 }: {
   imports = [
@@ -38,9 +37,9 @@
   nixpkgs.overlays = [
     inputs.emacs-overlay.overlays.default
 
-    self.overlays.unstable
-    self.overlays.modifications
-    self.overlays.additions
+    inputs.self.overlays.unstable-packages
+    inputs.self.overlays.modifications
+    inputs.self.overlays.additions
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -81,6 +80,26 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    gedit # text editor
+    epiphany # web browser
+    geary # email reader
+    gnome-characters
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+    yelp # Help view
+    gnome-contacts
+    gnome-initial-setup
+  ]);
+
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "gb";
   # services.xserver.xkb.options = "eurosign:e,caps:ctrl";
@@ -118,7 +137,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs self;};
+    extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
   };
