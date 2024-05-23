@@ -7,8 +7,12 @@ in {
       package = pkgs.unstable.kanagawa-gtk-theme;
     };
     iconTheme = {
-      name = "Kanagawa";
+      name = "oomox-Kanagawa";
       package = null;
+    };
+    cursorTheme = {
+      name = "GoogleDot-Black";
+      package = pkgs.google-cursor;
     };
   };
 }
