@@ -4,6 +4,7 @@
     ./programs/editors/emacs
     ./programs/cli/zsh
     ./programs/terminals/alacritty.nix
+    ./program/misc/rofi
     ./gtk.nix
     ./fonts.nix
   ];
