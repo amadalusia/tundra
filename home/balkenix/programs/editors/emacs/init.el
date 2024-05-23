@@ -25,14 +25,29 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+
+;; optionally if you want to use debugger
+(use-package dap-mode)
+;; (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; optional if you want which-key integration
+(use-package which-key
+    :config
+    (which-key-mode))
+
 (use-package nix-mode
   :mode ("\\.nix\\'" "\\.nix.in\\'"))
+
 (use-package nix-drv-mode
   :ensure nix-mode
   :mode "\\.drv\\'")
+
 (use-package nix-shell
   :ensure nix-mode
   :commands (nix-shell-unpack nix-shell-configure nix-shell-build))
+
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
@@ -47,18 +62,6 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode)
-
-;; optionally if you want to use debugger
-(use-package dap-mode)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-;; optional if you want which-key integration
-(use-package which-key
-    :config
-    (which-key-mode))
-
-(use-package nix-ts-mode
-  :mode "\\.nix\\'")
-
+(use-package magit
+  :bind (("C-x g" . magit-status)
+	 ("C-x C-g" . magit-status)))

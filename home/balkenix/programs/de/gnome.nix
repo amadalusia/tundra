@@ -35,6 +35,11 @@
       ];
     };
 
+    "org/gnome/shell/extensions/dash-to-dock" = {
+      hot-keys = false;
+      show-trash = false;
+    };
+    
     "org/gnome/shell/extensions/user-theme" = {
       name = "Kanagawa-BL-LB";
     };
