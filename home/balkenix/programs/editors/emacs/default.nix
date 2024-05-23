@@ -19,7 +19,7 @@
         dap-mode
         helm-lsp
         tree-sitter
-	magit
+        magit
       ];
   };
 }
