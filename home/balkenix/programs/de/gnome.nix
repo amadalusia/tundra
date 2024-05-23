@@ -1,12 +1,13 @@
 {pkgs, lib, ...}: {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     gnome.gnome-tweaks
-    gnomeExtensions.space-bar
-    gnomeExtensions.user-themes
-    gnomeExtensions.vitals
-    gnomeExtensions.pop-shell
-    gnomeExtensions.rounded-window-corners
-  ];
+  ];) ++ (with pkgs.gnomeExtensions; [
+    space-bar
+    user-themes
+    vitals
+    pop-shell
+    dash-to-dock
+  ]);
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -24,6 +25,7 @@
         "Vitals@CoreCoding.com"
         "pop-shell@system76.com"
         "rounded-window-corners@yilozt"
+	"dash-to-dock@micxgx.gmail.com"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -79,7 +81,7 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
+      binding = "<Super>T";
       command = "${pkgs.alacritty}/bin/alacritty";
       name = "Launch terminal";
     };
