@@ -60,9 +60,6 @@
           inherit system;
           overlays = [
             inputs.emacs-overlay.overlays.default
-            self.overlays.additions
-            self.overlays.modifications
-            self.overlays.unstable
           ];
         };
         formatter = pkgs.alejandra;
