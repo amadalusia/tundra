@@ -114,7 +114,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>e";
-      command = "${config.programs.emacs.package}/bin/emacs";
+      command = "${config.programs.emacs.package}/bin/emacsclient -c";
       name = "Launch Emacs";
     };
 
