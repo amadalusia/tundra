@@ -3,6 +3,7 @@ _: let
 in {
   programs.alacritty = {
     enable = true;
+    catppuccin.enable = true;
     settings = {
       window = {
         padding = {
@@ -11,7 +12,6 @@ in {
         };
         title = "Alacritty";
       };
-      catppuccin.enable = true;
       font = {
         normal = {
           inherit family;

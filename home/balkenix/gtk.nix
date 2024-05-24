@@ -3,8 +3,8 @@ in {
   gtk = {
     enable = true;
     catppuccin = {
-      theme = "mocha";
       accent = "blue";
+      tweaks = [ "normal" ];
       enable = true;
       gnomeShellTheme = true;
       cursor.enable = true;

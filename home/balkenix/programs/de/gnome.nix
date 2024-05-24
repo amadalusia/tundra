@@ -51,10 +51,6 @@
       show-trash = false;
     };
 
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "Kanagawa-B";
-    };
-
     "org/gnome/shell/extensions/pop-shell" = {
       hint-color-rgba = "rgba(147, 138, 169, 1)";
       activate-launcher = [""];
