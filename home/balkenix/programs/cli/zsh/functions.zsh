@@ -1,5 +1,5 @@
 gp() {
-    if [! -e $1 ]; then
+    if ! [ -e $1 ]; then
         git push -u origin/main
 	return 1
     fi
@@ -8,7 +8,7 @@ gp() {
 }
 
 gc() {
-    if [! -e $1]; then
+    if ! [ -e $1]; then
 	git commit -m "$(date)"
 	return 1
     fi
@@ -16,7 +16,7 @@ gc() {
 }
 
 gs() {
-    if [! -e $1]; then
+    if ! [ -e $1]; then
 	git add .
     fi
 
