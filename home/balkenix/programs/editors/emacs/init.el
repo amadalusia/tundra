@@ -65,3 +65,42 @@
 (use-package magit
   :bind (("C-x g" . magit-status)
 	 ("C-x C-g" . magit-status)))
+
+(use-package vertico
+  :init
+  (vertico-mode)
+  (setq vertico-count 20)
+  )
+
+;; Optionally use the `orderless' completion style.
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless basic)
+	completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
+(use-package savehist
+  :init
+  (savehist-mode))
+
+(use-package emacs
+  :init
+  (defun crm-indicator (args)
+    (cons (format "[CRM%s] %s"
+                  (replace-regexp-in-string
+                   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+                   crm-separator)
+                  (car args))
+          (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+  (setq enable-recursive-minibuffers t)
+  (setq read-extended-command-predicate #'command-completion-default-include-p))
+
+(keymap-set vertico-map "?" #'minibuffer-completion-help)
+(keymap-set vertico-map "M-RET" #'minibuffer-force-complete-and-exit)
+(keymap-set vertico-map "M-TAB" #'minibuffer-complete)
+
+(setq completion-styles '(substring orderless basic))

@@ -8,7 +8,7 @@
         use-package
         async
         avy
-	kanagawa-theme
+      	kanagawa-theme
         doom-modeline
         nix-mode
         lsp-mode
@@ -20,6 +20,8 @@
         helm-lsp
         tree-sitter
         magit
+        vertico
+        orderless
       ];
   };
 
