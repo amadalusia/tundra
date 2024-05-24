@@ -89,7 +89,7 @@
     (with pkgs; [
       gnome-photos
       gnome-tour
-      gedits
+      gedit
     ])
     ++ (with pkgs.gnome; [
       cheese # webcam tool
