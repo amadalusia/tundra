@@ -3,7 +3,6 @@
     enable = true;
     package = pkgs.emacs-unstable;
     extraConfig = builtins.readFile ./init.el;
-    alwaysEnsure = true;
     extraPackages = epkgs:
       with epkgs; [
         use-package
