@@ -114,7 +114,7 @@
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>e";
       command = "${pkgs.emacs}/bin/emacs";
-      name = "Launch Emacs"
+      name = "Launch Emacs";
     };
 
     "org/gnome/shell/extensions/blur-my-shell" = {
