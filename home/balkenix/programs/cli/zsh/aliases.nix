@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.zsh = {
-    aliases = {
+    shellAliases = {
       "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/tundra#snoland";
     };
     initExtra = builtins.readFile ./functions.zsh;
