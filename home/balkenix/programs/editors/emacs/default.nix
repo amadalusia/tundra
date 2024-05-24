@@ -22,4 +22,11 @@
         magit
       ];
   };
+
+  service.emacs = {
+    enable = true;
+    defaultEditor = true;
+    startWithUserSession = true;
+    client.enable = false;
+  };
 }
