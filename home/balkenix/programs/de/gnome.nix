@@ -101,7 +101,7 @@
     };
 
     "org/gnome/desktop/interface" = {
-      gtk-key-theme = "Emacs";
+      gtk-key-theme = "Default";
     };
 
     "org/gnome/mutter" = {
