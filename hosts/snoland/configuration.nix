@@ -81,22 +81,19 @@
   # enable OpenGL
   hardware.opengl.enable = true;
   
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   environment.gnome.excludePackages =
     (with pkgs; [
       gnome-photos
       gnome-tour
+      gedits
     ])
     ++ (with pkgs.gnome; [
       cheese # webcam tool
       gnome-music
-      gedit # text editor
       epiphany # web browser
       geary # email reader
       gnome-characters
