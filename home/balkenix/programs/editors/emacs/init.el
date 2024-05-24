@@ -104,3 +104,8 @@
 (keymap-set vertico-map "M-TAB" #'minibuffer-complete)
 
 (setq completion-styles '(substring orderless basic))
+
+(use-package "omni-theme"
+  :ensure t
+  :init
+  (load-theme 'omni t))

@@ -8,7 +8,6 @@
         use-package
         async
         avy
-      	kanagawa-theme
         doom-modeline
         nix-mode
         lsp-mode

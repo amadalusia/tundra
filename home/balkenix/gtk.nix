@@ -3,12 +3,12 @@ in {
   gtk = {
     enable = true;
     theme = {
-      name = "Kanagawa-B";
-      package = pkgs.unstable.kanagawa-gtk-theme;
+      name = "Omni";
+      package = pkgs.omni-gtk-theme;
     };
     iconTheme = {
-      name = "Kanagawa";
-      package = pkgs.unstable.kanagawa-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders;
     };
     cursorTheme = {
       name = "GoogleDot-Black";
