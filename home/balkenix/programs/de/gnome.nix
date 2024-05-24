@@ -15,6 +15,7 @@
       pop-shell
       dash-to-dock
       blur-my-shell
+      open-bar
     ]);
 
   dconf.settings = {
@@ -35,6 +36,7 @@
         "rounded-window-corners@yilozt"
         "dash-to-dock@micxgx.gmail.com"
         "blur-my-shell@aunetx"
+        "openbar@neuromorph"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -50,7 +52,7 @@
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "Kanagawa-BL-LB";
+      name = "Kanagawa-B";
     };
 
     "org/gnome/shell/extensions/pop-shell" = {

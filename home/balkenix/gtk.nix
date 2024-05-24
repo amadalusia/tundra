@@ -3,7 +3,7 @@ in {
   gtk = {
     enable = true;
     theme = {
-      name = "Kanagawa-B-LB";
+      name = "Kanagawa-B";
       package = pkgs.unstable.kanagawa-gtk-theme;
     };
     iconTheme = {
