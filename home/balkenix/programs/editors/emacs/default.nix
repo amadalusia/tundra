@@ -21,6 +21,7 @@
         magit
         vertico
         orderless
+        catppuccin-theme
       ];
   };
 

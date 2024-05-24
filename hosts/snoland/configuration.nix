@@ -80,10 +80,17 @@
 
   # enable OpenGL
   hardware.opengl.enable = true;
+
+  services.xserver.enable = true;
   
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm = {
+    enable = true;
+    wayland = true;
+  };
+  
   services.xserver.desktopManager.gnome.enable = true;
+  programs.dconf.enable = true;
 
   environment.gnome.excludePackages =
     (with pkgs; [
@@ -123,7 +130,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
@@ -133,6 +140,7 @@
       useDefaultShell = true;
       isNormalUser = true;
       extraGroups = ["video" "audio" "wheel"];
+      initialHashedPassword = "$y$j9T$/Q91kI9aIxcHdCfxZ.O.T0$vgokGoqM697AOjrfO152nuYgRCUuRvBlKIDDI0vcK40";
       packages = with pkgs; [
         firefox
         tree
