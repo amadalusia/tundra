@@ -1,7 +1,7 @@
 _: {
   imports = [
     ./plugins.nix
-    ./aliasex.nix
+    ./aliases.nix
   ];
 
   programs.zsh = {
