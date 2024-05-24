@@ -111,6 +111,12 @@
       name = "Launch terminal";
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>e";
+      command = "${pkgs.emacs}/bin/emacs";
+      name = "Launch Emacs"
+    };
+
     "org/gnome/shell/extensions/blur-my-shell" = {
       sigma = 100;
       brightness = 0.75;
