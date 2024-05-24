@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -113,7 +114,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>e";
-      command = "${pkgs.emacs-unstable}/bin/emacs";
+      command = "${config.programs.emacs.package}/bin/emacs";
       name = "Launch Emacs";
     };
 
