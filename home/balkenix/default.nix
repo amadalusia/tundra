@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+    
     ./programs/de/gnome.nix
     ./programs/editors/emacs
     ./programs/cli/zsh
@@ -9,6 +11,8 @@
     ./gtk.nix
     ./fonts.nix
   ];
+
+  catppuccin.flavor = "mocha";
 
   home.packages = with pkgs; [
     vesktop

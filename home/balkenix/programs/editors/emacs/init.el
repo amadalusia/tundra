@@ -16,12 +16,6 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(use-package kanagawa-theme
-  :init
-  setq kanagawa-theme-comment-italic t)
-
-(load-theme 'kanagawa t)
-
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 

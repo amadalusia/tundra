@@ -2,17 +2,13 @@
 in {
   gtk = {
     enable = true;
-    theme = {
-      name = "Omni";
-      package = pkgs.omni-gtk-theme;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders;
-    };
-    cursorTheme = {
-      name = "GoogleDot-Black";
-      package = pkgs.google-cursor;
+    catppuccin = {
+      theme = "mocha";
+      accent = "blue";
+      enable = true;
+      gnomeShellTheme = true;
+      cursor.enable = true;
+      icon.enable = true;
     };
   };
 }
