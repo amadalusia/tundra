@@ -6,6 +6,9 @@
     ./programs/editors/emacs
     ./programs/cli/zsh
     ./programs/cli/git.nix
+    ./programs/cli/direnv.nix
+    ./programs/cli/bat.nix
+    ./programs/cli/fzf.nix
     ./programs/terminals/alacritty.nix
     ./programs/misc/rofi
     ./gtk.nix

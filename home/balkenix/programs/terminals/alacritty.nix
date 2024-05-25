@@ -5,6 +5,9 @@ in {
     enable = true;
     catppuccin.enable = true;
     settings = {
+      env = {
+        TERM = "xterm-256color";
+      };
       window = {
         padding = {
           x = 10;
