@@ -9,7 +9,7 @@
       owner = "flexagoon";
       repo = "rounded-window-corners";
       rev = "61c326e3d6cba36fe3d07cf1c15e6c74d3f9abb1";
-      sha256 = "";
+      sha256 = "jS6G9wSKSXAxNhCmuew6pTcYa1gTZqbfrcAZ0ky4vkc=";
     };
   }));
 in {
