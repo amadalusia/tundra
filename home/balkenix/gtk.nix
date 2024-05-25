@@ -4,7 +4,7 @@ in {
     enable = true;
     catppuccin = {
       accent = "blue";
-      tweaks = [ "normal" ];
+      tweaks = ["normal"];
       enable = true;
       gnomeShellTheme = true;
       cursor.enable = true;

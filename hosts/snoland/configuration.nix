@@ -18,7 +18,7 @@
   ];
 
   catppuccin.flavor = "mocha";
-  
+
   # enable flakes lmao
   nix = {
     settings = {
@@ -82,13 +82,13 @@
   hardware.opengl.enable = true;
 
   services.xserver.enable = true;
-  
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
-  
+
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
 

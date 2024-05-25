@@ -4,14 +4,14 @@
   lib,
   ...
 }: let
-  rounded-window-corners = (pkgs.gnomeExtensions.rounded-window-corners.overrideAttrs (finalAttrs: previousAttrs: {
+  rounded-window-corners = pkgs.gnomeExtensions.rounded-window-corners.overrideAttrs (finalAttrs: previousAttrs: {
     src = pkgs.fetchFromGitHub {
       owner = "flexagoon";
       repo = "rounded-window-corners";
       rev = "61c326e3d6cba36fe3d07cf1c15e6c74d3f9abb1";
       sha256 = "jS6G9wSKSXAxNhCmuew6pTcYa1gTZqbfrcAZ0ky4vkc=";
     };
-  }));
+  });
 in {
   home.packages =
     (with pkgs; [
@@ -26,9 +26,9 @@ in {
       blur-my-shell
       open-bar
     ])
-    ++ ([
+    ++ [
       rounded-window-corners
-    ]);
+    ];
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -87,7 +87,7 @@ in {
       move-to-workspace-4 = "['<Super><Shift>4']";
       switch-to-workspace-4 = ["<Super>4"];
 
-      close = [ "<Shift><Super>q" ];
+      close = ["<Shift><Super>q"];
     };
 
     "org/gnome/shell/keybindings" = {

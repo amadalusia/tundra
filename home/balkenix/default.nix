@@ -1,7 +1,11 @@
-{inputs, pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
-    
+
     ./programs/de/gnome.nix
     ./programs/editors/emacs
     ./programs/cli/zsh
