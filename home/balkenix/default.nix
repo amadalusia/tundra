@@ -13,6 +13,7 @@
     ./programs/cli/direnv.nix
     ./programs/cli/bat.nix
     ./programs/cli/fzf.nix
+    ./programs/cli/lazygit.nix
     ./programs/terminals/alacritty.nix
     ./programs/misc/rofi
     ./gtk.nix
