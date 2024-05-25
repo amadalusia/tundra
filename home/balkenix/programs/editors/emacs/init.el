@@ -211,11 +211,6 @@
 ;; When non-nil, always show the register name when recording an evil macro.
 (setq doom-modeline-always-show-macro-register nil)
 
-;; Whether display the mu4e notifications. It requires `mu4e-alert' package.
-(setq doom-modeline-mu4e nil)
-;; also enable the start of mu4e-alert
-(mu4e-alert-enable-mode-line-display)
-
 ;; Whether display the gnus notifications.
 (setq doom-modeline-gnus t)
 
