@@ -16,8 +16,11 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(use-package catppuccin-theme)
+(use-package 'catppuccin-theme
+  :ensure t)
+
 (load-theme 'catppuccin :no-confirm)
+
 (setq catppuccin-flavor 'mocha)
 
 (use-package doom-modeline
@@ -352,8 +355,3 @@
 (keymap-set vertico-map "M-TAB" #'minibuffer-complete)
 
 (setq completion-styles '(substring orderless basic))
-
-(use-package "omni-theme"
-  :ensure t
-  :init
-  (load-theme 'omni t))
