@@ -140,7 +140,6 @@
       useDefaultShell = true;
       isNormalUser = true;
       extraGroups = ["video" "audio" "wheel"];
-      initialHashedPassword = "$y$j9T$/Q91kI9aIxcHdCfxZ.O.T0$vgokGoqM697AOjrfO152nuYgRCUuRvBlKIDDI0vcK40";
       packages = with pkgs; [
         firefox
         tree
