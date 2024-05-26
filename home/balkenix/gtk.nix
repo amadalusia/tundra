@@ -2,13 +2,11 @@
 in {
   gtk = {
     enable = true;
-    catppuccin = {
-      accent = "blue";
-      tweaks = ["normal"];
-      enable = true;
-      gnomeShellTheme = true;
-      cursor.enable = true;
-      icon.enable = true;
-    };
+    theme = (pkgs.catppuccin-gtk.override {
+      accents = ["blue"];
+      size = "compact";
+      tweaks = ["rimless" "black"];
+      variant = "mocha";
+    })
   };
 }

@@ -1,6 +1,8 @@
 {inputs, ...}: {
   additions = final: prev: import ../pkgs {pkgs = final;};
 
+  catppuccin-gtk = final: prev: import ./catppuccin.gtk {pkgs = final;};
+
   modifications = final: prev: {};
 
   unstable-packages = final: _prev: {
