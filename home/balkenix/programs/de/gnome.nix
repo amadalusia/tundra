@@ -16,14 +16,15 @@
       dash-to-dock
       blur-my-shell
       open-bar
+      unite
     ]);
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       monospace-font-name = "IosevkaTerm Nerd Font Mono 10";
-      font-name = "Inter 11";
-      titlebar-font = "Inter 11";
+      font-name = "IosevkaTerm Nerd Font Mono 11";
+      titlebar-font = "IosevkaTerm Nerd Font Mono 11";
       font-antialiasing = "rgba";
     };
     "org/gnome/shell" = {
@@ -37,6 +38,7 @@
         "dash-to-dock@micxgx.gmail.com"
         "blur-my-shell@aunetx"
         "openbar@neuromorph"
+        "unite@hardpixel.eu"
       ];
       favorite-apps = [
         "firefox.desktop"
@@ -44,6 +46,17 @@
         "Alacritty.desktop"
         "vesktop.desktop"
       ];
+    };
+
+    "org/gnome/shell/extensions/unite" = {
+      show-window-title = "never";
+      hide-activities-button = "always";
+      hide-window-titlebars = "always";
+      show-window-buttons = "always";
+      enable-titlebar-actions = true;
+      window-buttons-placement = "first";
+      extend-left-box = false;
+      reduce-panel-spacing = true;
     };
 
     "org/gnome/shell/extensions/dash-to-dock" = {
