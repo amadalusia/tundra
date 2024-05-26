@@ -43,7 +43,6 @@
     inputs.self.overlays.unstable-packages
     inputs.self.overlays.modifications
     inputs.self.overlays.additions
-    inputs.self.overlays.catppuccin-gtk
   ];
 
   # Use the systemd-boot EFI boot loader.

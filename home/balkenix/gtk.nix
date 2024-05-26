@@ -7,6 +7,7 @@ in {
       accent = "red";
       gnomeShellTheme = true;
       cursor.enable = true;
+      icon.enable = true;
       tweaks = [
         "rimless"
         "normal"
