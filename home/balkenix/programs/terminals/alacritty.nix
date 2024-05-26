@@ -13,6 +13,7 @@ in {
           x = 10;
           y = 10;
         };
+        decorations = "None";
         title = "Alacritty";
       };
       font = {
