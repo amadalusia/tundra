@@ -33,7 +33,7 @@
         "space-bar@luchrioh"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
-        "forge@jmmaranan.comm"
+        "forge@jmmaranan.com"
         "rounded-window-corners@yilozt"
         "dash-to-dock@micxgx.gmail.com"
         "blur-my-shell@aunetx"
