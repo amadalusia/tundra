@@ -350,3 +350,19 @@
 (keymap-set vertico-map "M-TAB" #'minibuffer-complete)
 
 (setq completion-styles '(substring orderless basic))
+
+(use-package parinfer-rust-mode
+  :hook emacs-lisp-mode)
+
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+(use-package rust-mode
+  :init
+  (setq rust-mode-treesitter-derive t))
+
+(use-package go-mode)
+
+(use-package typescript-mode)
+

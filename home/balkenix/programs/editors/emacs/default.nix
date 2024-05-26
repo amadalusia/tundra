@@ -22,6 +22,13 @@
         vertico
         orderless
         catppuccin-theme
+        rust-mode
+        parinfer-rust-mode
+        flycheck
+        flycheck-rust
+        flycheck-golangci-lint
+        typescript-mode
+        tree-sitter-langs
       ];
   };
 
