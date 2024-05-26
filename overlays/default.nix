@@ -1,7 +1,7 @@
 {inputs, ...}: {
   additions = final: prev: import ../pkgs {pkgs = final;};
 
-  catppuccin-gtk = final: prev: import ./catppuccin-gtk.nix {pkgs = final;};
+  catppuccin-gtk = import ./catppuccin-gtk.nix {pkgs = final;};
 
   modifications = final: prev: {};
 
