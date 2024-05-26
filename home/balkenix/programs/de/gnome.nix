@@ -12,7 +12,7 @@
       space-bar
       user-themes
       vitals
-      pop-shell
+      forge
       dash-to-dock
       blur-my-shell
       open-bar
@@ -33,7 +33,7 @@
         "space-bar@luchrioh"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
-        "pop-shell@system76.com"
+        "forge@jmmaranan.comm"
         "rounded-window-corners@yilozt"
         "dash-to-dock@micxgx.gmail.com"
         "blur-my-shell@aunetx"
