@@ -7,6 +7,7 @@
     inputs.catppuccin.homeManagerModules.catppuccin
 
     ./programs/de/gnome.nix
+    ./programs/wm/river
     ./programs/editors/emacs
     ./programs/cli/zsh
     ./programs/cli/git.nix
