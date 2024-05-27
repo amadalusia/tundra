@@ -14,7 +14,7 @@ writeShellApplication {
 
   text = ''
     GEOMETRY="$(${slurp}/bin/slurp)"
-    SCREENSHOT="$HOME/Pictures/Screenshots/$(${coreutils}/bin/date +%a-%d-%h-%Y %T).png"
+    SCREENSHOT="$HOME/Pictures/Screenshots/$(${coreutils}/bin/date +%a-%d-%h-%Y\ %T).png"
 
     ${grim}/bin/grim -g "$GEOMETRY" > "$SCREENSHOT"
     ${wl-clipboard}/bin/wl-copy < "$SCREENSHOT"
