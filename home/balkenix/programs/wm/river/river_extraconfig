@@ -1,0 +1,8 @@
+
+for i in {1..9}; do
+    riverctl map normal ${river.modKey} $i set-focused-tags $((1 << $(($i - 1))))
+    riverctl map normal ${river.modKey}+Shift $i set-view-tags $((1 << $(($i - 1))))
+    riverctl map normal ${river.modKey}+Control $i toggle-focused-tags $((1 << $(($i - 1))))
+    riverctl map normal ${river.modKey}+Control+Shift $i toggle-view-tags $((1 << $(($i - 1))))
+done
+	 

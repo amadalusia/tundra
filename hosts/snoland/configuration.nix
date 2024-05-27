@@ -81,15 +81,14 @@
   # enable OpenGL
   hardware.opengl.enable = true;
 
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = {
+  services.xserver = {
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
     enable = true;
-    wayland = true;
   };
-
-  services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
 
   environment.gnome.excludePackages =

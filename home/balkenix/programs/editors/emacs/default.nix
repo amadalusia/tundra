@@ -28,7 +28,7 @@
         flycheck-rust
         flycheck-golangci-lint
         typescript-mode
-        tree-sitter-langs
+        treesit-grammars.with-all-grammars 
       ];
   };
 
