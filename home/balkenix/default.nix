@@ -21,7 +21,7 @@
     ./fonts.nix
   ];
 
-  catppuccin.flavor = "mocha";
+  catppuccin.flavor = "frappe";
 
   home.packages = with pkgs; [
     vesktop
