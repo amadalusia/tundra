@@ -219,16 +219,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1716338154,
-        "narHash": "sha256-xsH5dyBx7UiIuttBkixjP+SXelyUI9feVncp574G8KU=",
-        "owner": "areif-dev",
-        "repo": "river-bsp-layout",
-        "rev": "f27d1d0d492c7e0022695e2a7a0fdf9343877d3d",
+        "lastModified": 1716899623,
+        "narHash": "sha256-s5w2wwfvns9EMXQWW5bYB6YxtKAQBZ6JYJiBx8DzhMQ=",
+        "owner": "balkenix",
+        "repo": "river-bsp-layout-fix-flake",
+        "rev": "e5403993fa65b63c1750ebfff17f88ff2d997d39",
         "type": "github"
       },
       "original": {
-        "owner": "areif-dev",
-        "repo": "river-bsp-layout",
+        "owner": "balkenix",
+        "repo": "river-bsp-layout-fix-flake",
         "type": "github"
       }
     },

@@ -3,14 +3,11 @@
   screenshot-slurp = pkgs.callPackage ./scripts/screenshot-slurp.nix {};
   river-bsp-layout = inputs.river-bsp-layout.packages.${pkgs.system}.default;
 in {
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     swaybg
     grim
     wl-clipboard
     libnotify
-  ]) ++ [
-    screenshot
-    screenshot-slurp
   ];
 
   wayland.windowManager.river = let
@@ -26,7 +23,7 @@ in {
         riverctl map normal ${mod}+Control+Shift $i toggle-view-tags $((1 << $(($i - 1))))
       done
 
-      ${river-bsp-layout}/bin/river-bsp-layout
+      ${river-bsp-layout}/bin/river-bsp-layout --inner-gap 6 --outer-gap 6 --split-perc 0.5 &
       ${pkgs.swaybg}/bin/swaybg -i ${../../../wallpapers/cafe.jpg}
     '';
     settings = {
