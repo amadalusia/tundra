@@ -26,6 +26,7 @@
   home.packages = with pkgs; [
     vesktop
     tomato-c
+    rmg
   ];
 
   home.stateVersion = "23.11";

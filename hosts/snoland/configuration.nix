@@ -81,37 +81,6 @@
   # enable OpenGL
   hardware.opengl.enable = true;
 
-  services.xserver = {
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
-    enable = true;
-  };
-  programs.dconf.enable = true;
-
-  environment.gnome.excludePackages =
-    (with pkgs; [
-      gnome-photos
-      gnome-tour
-      gedit
-    ])
-    ++ (with pkgs.gnome; [
-      cheese # webcam tool
-      gnome-music
-      epiphany # web browser
-      geary # email reader
-      gnome-characters
-      tali # poker game
-      iagno # go game
-      hitori # sudoku game
-      atomix # puzzle game
-      yelp # Help view
-      gnome-contacts
-      gnome-initial-setup
-    ]);
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "gb";
   # services.xserver.xkb.options = "eurosign:e,caps:ctrl";
@@ -128,6 +97,15 @@
     pulse.enable = true;
   };
 
+  # Enable XDG Desktop Portal
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config = {
+      common.default = [ "wlr" "gtk" ];
+    };
+  };
+  
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
