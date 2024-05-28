@@ -22,7 +22,7 @@
     };
 
     river-bsp-layout = {
-      url = "github:areif-dev/river-bsp-layout";
+      url = "github:balkenix/river-bsp-layout-fix-flake";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
