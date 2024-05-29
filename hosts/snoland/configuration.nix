@@ -39,7 +39,7 @@
   # overlays
   nixpkgs.overlays = [
     inputs.emacs-overlay.overlays.default
-
+    inputs.norshfetch.overlays.default
     inputs.self.overlays.unstable-packages
     inputs.self.overlays.modifications
     inputs.self.overlays.additions
@@ -98,10 +98,6 @@
   # enable OpenGL
   hardware.opengl.enable = true;
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "gb";
-  # services.xserver.xkb.options = "eurosign:e,caps:ctrl";
-
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -158,6 +154,7 @@
     git
     vim
     wget
+    norshfetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

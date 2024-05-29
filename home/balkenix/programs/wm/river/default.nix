@@ -45,8 +45,8 @@ in {
         normal = {
           "${mod} Return" = "spawn '${config.programs.alacritty.package}/bin/alacritty'";
           "${mod} p" = "spawn '${config.programs.rofi.package}/bin/rofi -show drun'";
-          "${mod}+Shift w" = "close";
-          "${mod}+Shift e" = "exit";
+          "${mod}+Shift c" = "close";
+          "${mod}+Shift q" = "exit";
           "${mod} h" = "focus-view previous";
           "${mod} j" = "focus-view down";
           "${mod} k" = "focus-view up";
@@ -55,8 +55,8 @@ in {
           "${mod} f" = "default-layout";
           "${mod}+Shift Space" = "toggle-float";
           "${mod} m" = "toggle-fullscreen";
-          "Print" = "${screenshot-slurp}/bin/screenshot-slurp";
-          "Shift+Print" = "${screenshot}/bin/screenshot";
+          "None Print" = "spawn '${screenshot-slurp}/bin/screenshot-slurp'";
+          "Shift Print" = "spawn '${screenshot}/bin/screenshot'";
         };
       };
       default-layout = "bsp-layout";

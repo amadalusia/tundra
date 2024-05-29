@@ -208,6 +208,29 @@
         "type": "github"
       }
     },
+    "norshfetch": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1716975153,
+        "narHash": "sha256-z6X5R3o9Cq2Hb+4g0VOTwQaI6R5Nby/jiGC5cQ4PUcc=",
+        "owner": "balkenix",
+        "repo": "norshfetch",
+        "rev": "57d0e58cedcb2d2b19b7ab3314e22e0a5db6c703",
+        "type": "github"
+      },
+      "original": {
+        "owner": "balkenix",
+        "repo": "norshfetch",
+        "type": "github"
+      }
+    },
     "river-bsp-layout": {
       "inputs": {
         "flake-parts": [
@@ -241,6 +264,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "norshfetch": "norshfetch",
         "river-bsp-layout": "river-bsp-layout"
       }
     },

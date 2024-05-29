@@ -26,6 +26,12 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    norshfetch = {
+      url = "github:balkenix/norshfetch";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -66,9 +72,11 @@
           inherit system;
           overlays = [
             inputs.emacs-overlay.overlays.default
+            inputs.norshfetch.overlays.default
+            self.overlays.default
           ];
         };
-        formatter = pkgs.alejandra;
+        formatter = pkgs.nixpkgs-fmt;
       };
 
       systems = [
