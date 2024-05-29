@@ -6,7 +6,6 @@
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
 
-    ./programs/de/gnome.nix
     ./programs/wm/river
     ./programs/editors/emacs
     ./programs/cli/zsh
@@ -17,6 +16,7 @@
     ./programs/cli/lazygit.nix
     ./programs/terminals/alacritty.nix
     ./programs/misc/rofi
+    ./programs/misc/dunst
     ./gtk.nix
     ./fonts.nix
   ];

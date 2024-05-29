@@ -1,6 +1,6 @@
 _: {
   services.dunst = {
     enable = true;
-    configFile = ./dunstrc;
+    catppuccin.enable = true;
   };
 }

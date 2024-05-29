@@ -21,7 +21,8 @@
 
 (load-theme 'catppuccin :no-confirm)
 
-(setq catppuccin-flavor 'mocha)
+(setq catppuccin-flavor 'frappe)
+(catppuccin-reload)
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
