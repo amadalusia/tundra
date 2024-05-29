@@ -17,6 +17,7 @@
     ./programs/terminals/alacritty.nix
     ./programs/misc/rofi
     ./programs/misc/dunst
+    ./programs/misc/yazi.nix
     ./gtk.nix
     ./fonts.nix
   ];
