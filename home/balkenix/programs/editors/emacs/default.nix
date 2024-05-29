@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: {
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;
@@ -23,6 +23,7 @@
         orderless
         catppuccin-theme
         rust-mode
+        parinfer-rust-emacs
         parinfer-rust-mode
         flycheck
         flycheck-rust
@@ -33,6 +34,7 @@
   };
 
   services.emacs = {
+    package = config.programs.emacs.package;
     enable = true;
     defaultEditor = true;
     startWithUserSession = "graphical";

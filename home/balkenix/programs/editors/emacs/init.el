@@ -363,7 +363,8 @@
   :init
   (setq rust-mode-treesitter-derive t))
 
-(use-package go-mode)
+(use-package go-mode
+  :mode "\\*.go\\'")
 
-(use-package typescript-mode)
-
+(use-package typescript-mode
+  :mode "\\*.ts\\'" "\\*.js\\'")
