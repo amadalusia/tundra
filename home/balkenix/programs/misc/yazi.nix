@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     unzip
     rar
-    unrar
     ueberzugpp
   ];
 
