@@ -5,6 +5,8 @@
     catppuccin.enable = true;
     extraConfig = {
       modi = "window,drun,run";
+      icon-theme = "Papirus";
+      show-icons = true;
       kb-primary-paste = "Control+V,Shift+Insert";
       kb-secondary-paste = "Control+v,Insert";
       drun-display-format = "{icon} {name}";
@@ -13,7 +15,7 @@
       hide-scrollbar = true;
       display-drun = "   Apps ";
       display-run = "   Run ";
-      display-window = " 﩯  Window";
+      display-window = "   Window";
       display-Network = " 󰤨  Network";
       sidebar-mode = true;
     };

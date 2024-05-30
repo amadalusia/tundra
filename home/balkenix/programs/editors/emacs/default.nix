@@ -33,10 +33,9 @@
   };
 
   services.emacs = {
-    package = config.programs.emacs.package;
     enable = true;
     defaultEditor = true;
     startWithUserSession = "graphical";
-    client.enable = false;
+    client.enable = true;
   };
 }
