@@ -19,6 +19,7 @@
     ./programs/misc/dunst.nix
     ./programs/misc/mpv.nix
     ./programs/misc/yazi.nix
+    ./programs/misc/imv.nix
     ./gtk.nix
     ./fonts.nix
   ];
