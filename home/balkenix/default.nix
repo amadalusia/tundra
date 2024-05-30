@@ -15,8 +15,9 @@
     ./programs/cli/fzf.nix
     ./programs/cli/lazygit.nix
     ./programs/terminals/alacritty.nix
-    ./programs/misc/rofi
-    ./programs/misc/dunst
+    ./programs/misc/rofi.nix
+    ./programs/misc/dunst.nix
+    ./programs/misc/mpv.nix
     ./programs/misc/yazi.nix
     ./gtk.nix
     ./fonts.nix

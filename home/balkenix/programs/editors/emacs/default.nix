@@ -23,7 +23,6 @@
         orderless
         catppuccin-theme
         rust-mode
-        parinfer-rust-emacs
         parinfer-rust-mode
         flycheck
         flycheck-rust
