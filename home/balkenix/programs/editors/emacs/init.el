@@ -352,6 +352,7 @@
 
 (setq completion-styles '(substring orderless basic))
 
+(setq indent-tabs-mode nil)
 (use-package parinfer-rust-mode
   :hook emacs-lisp-mode)
 
@@ -367,4 +368,4 @@
   :mode "\\*.go\\'")
 
 (use-package typescript-mode
-  :mode "\\*.ts\\'" "\\*.js\\'")
+  :mode ("\\*.ts\\'" "\\*.js\\'"))
