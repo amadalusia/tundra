@@ -2,7 +2,10 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;
-    extraConfig = builtins.readFile ./init.el;
+    extraConfig = ''
+      ${builtins.readFile ./init.el}
+      ${builtins.readFile ./lisp/init-ui.el}
+    '';
     extraPackages = epkgs:
       with epkgs; [
         use-package
