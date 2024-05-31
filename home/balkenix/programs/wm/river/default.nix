@@ -44,7 +44,7 @@ in {
       map = {
         normal = {
           "${mod} Return" = "spawn '${config.programs.alacritty.package}/bin/alacritty'";
-          "${mod} p" = "spawn '${config.programs.tofi.package}/bin/tofi-drun'";
+          "${mod} p" = "spawn '${config.programs.tofi.package}/bin/tofi-drun | bash'";
           "${mod}+Shift c" = "close";
           "${mod}+Shift q" = "exit";
           "${mod} h" = "focus-view previous";
