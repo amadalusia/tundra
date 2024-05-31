@@ -27,7 +27,7 @@
     ./xdg.nix
   ];
 
-  catppuccin.flavor = "frappe";
+  catppuccin.flavor = "macchiato";
 
   home.packages = with pkgs; [
     vesktop

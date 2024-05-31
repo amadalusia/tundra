@@ -17,7 +17,7 @@
     ./hardware-configuration.nix
   ];
 
-  catppuccin.flavor = "frappe";
+  catppuccin.flavor = "macchiato";
 
   # enable flakes lmao
   nix = {
