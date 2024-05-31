@@ -2,9 +2,9 @@ _: {
   xdg = {
     enable = true;
     mime.enable = true;
-    mineApps = {
+    mimeApps = {
       enable = true;
-      associations.added = {
+      defaultApplications = {
         "text/html" = [ "firefox.desktop" ];
         "video/mp4" = [ "mpv.desktop" ];
         "video/x-msvideo" = [ "mpv.desktop" ];

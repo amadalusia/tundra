@@ -22,6 +22,7 @@
     ./programs/misc/imv.nix
     ./gtk.nix
     ./fonts.nix
+    ./xdg.nix
   ];
 
   catppuccin.flavor = "frappe";
