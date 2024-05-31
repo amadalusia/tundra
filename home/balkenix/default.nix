@@ -21,6 +21,7 @@
     ./programs/misc/yazi.nix
     ./programs/misc/imv.nix
     ./gtk.nix
+    ./qt.nix
     ./fonts.nix
     ./xdg.nix
   ];
