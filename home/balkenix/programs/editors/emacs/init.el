@@ -133,7 +133,8 @@
 
 (setq completion-styles '(substring orderless basic))
 
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
+
 (use-package parinfer-rust-mode
   :hook emacs-lisp-mode)
 

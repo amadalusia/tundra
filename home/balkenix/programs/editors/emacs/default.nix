@@ -11,6 +11,9 @@
         use-package
         async
         avy
+        swiper
+        ivy
+        counsel
         doom-modeline
         nix-mode
         lsp-mode
@@ -31,7 +34,8 @@
         flycheck-rust
         flycheck-golangci-lint
         typescript-mode
-        treesit-grammars.with-all-grammars 
+        treesit-grammars.with-all-grammars
+        spacious-padding
       ];
   };
 
