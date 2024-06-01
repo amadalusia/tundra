@@ -11,13 +11,10 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.disko.nixosModules.disko
-    inputs.catppuccin.nixosModules.catppuccin
     ./disk-config.nix
     ./certificates.nix
     ./hardware-configuration.nix
   ];
-
-  catppuccin.flavor = "macchiato";
 
   # enable flakes lmao
   nix = {
@@ -66,7 +63,6 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
-    catppuccin.enable = true;
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
@@ -91,7 +87,6 @@
   console = {
     font = "Lat2-Terminus16";
     useXkbConfig = true; # use xkb.options in tty.
-    catppuccin.enable = true;
   };
 
   # enable OpenGL

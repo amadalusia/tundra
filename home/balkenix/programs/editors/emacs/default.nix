@@ -30,7 +30,6 @@
         magit
         vertico
         orderless
-        catppuccin-theme
         parinfer-rust-mode
         flycheck
         flycheck-rust

@@ -16,14 +16,6 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(use-package 'catppuccin-theme
-  :ensure t)
-
-(load-theme 'catppuccin :no-confirm)
-
-(setq catppuccin-flavor 'macchiato )
-(catppuccin-reload)
-
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 

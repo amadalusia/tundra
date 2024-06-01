@@ -1,7 +1,6 @@
 _: {
   programs.tofi = {
     enable = true;
-    catppuccin.enable = true;
     settings = {
       font = "IosevkaTerm Nerd Font Mono";
       border-width = 0;

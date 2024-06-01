@@ -3,7 +3,6 @@ _: let
 in {
   programs.alacritty = {
     enable = true;
-    catppuccin.enable = true;
     settings = {
       env = {
         TERM = "xterm-256color";

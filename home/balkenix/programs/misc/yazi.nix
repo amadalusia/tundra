@@ -8,7 +8,6 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-    catppuccin.enable = true;
     settings = {
       log = {
         enable = false;

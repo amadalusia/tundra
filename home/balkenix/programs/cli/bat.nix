@@ -1,7 +1,6 @@
 _: {
   programs.bat = {
     enable = true;
-    catppuccin.enable = true;
     config = {
       map-syntax = [
         "*.jenkinsfile:Groovy"

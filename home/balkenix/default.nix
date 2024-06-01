@@ -4,8 +4,6 @@
   ...
 }: {
   imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
-
     ./programs/wm/river
     ./programs/wm/waybar
     ./programs/editors/emacs
@@ -27,8 +25,6 @@
     ./fonts.nix
     ./xdg.nix
   ];
-
-  catppuccin.flavor = "macchiato";
 
   home.packages = with pkgs; [
     vesktop
