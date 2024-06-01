@@ -7,6 +7,7 @@
     inputs.catppuccin.homeManagerModules.catppuccin
 
     ./programs/wm/river
+    ./programs/wm/waybar
     ./programs/editors/emacs
     ./programs/cli/zsh
     ./programs/cli/git.nix
