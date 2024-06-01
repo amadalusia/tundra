@@ -16,6 +16,9 @@
         counsel
         doom-modeline
         nix-mode
+        rust-mode
+        typescript-mode
+        go-mode
         lsp-mode
         lsp-ui
         lsp-ivy
@@ -28,12 +31,10 @@
         vertico
         orderless
         catppuccin-theme
-        rust-mode
         parinfer-rust-mode
         flycheck
         flycheck-rust
         flycheck-golangci-lint
-        typescript-mode
         treesit-grammars.with-all-grammars
         spacious-padding
       ];
