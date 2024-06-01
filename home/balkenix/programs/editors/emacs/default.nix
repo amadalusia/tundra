@@ -45,4 +45,6 @@
     startWithUserSession = "graphical";
     client.enable = true;
   };
+
+  stylix.targets.emacs.enable = true;
 }

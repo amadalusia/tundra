@@ -11,10 +11,61 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.disko.nixosModules.disko
+    inputs.stylix.nixosModules.stylix
     ./disk-config.nix
     ./certificates.nix
     ./hardware-configuration.nix
   ];
+
+  stylix = {
+    autoEnable = false;
+    base16Scheme = {
+      base00 = "1F1F28";
+      base01 = "2A2A37";
+      base02 = "223249";
+      base03 = "727169";
+      base04 = "C8C093";
+      base05 = "DCD7BA";
+      base06 = "938AA9";
+      base07 = "363646";
+      base08 = "C34043";
+      base09 = "FFA066";
+      base0A = "DCA561";
+      base0B = "98BB6C";
+      base0C = "7FB4CA";
+      base0D = "7E9CD8";
+      base0E = "957FB8";
+      base0F = "D27E99";
+    };
+    image = ../../home/balkenix/wallpapers/cafe.jpg;
+    fonts = {
+      emoji = {
+        name = "Noto Color Emoji";
+        package = pkgs.noto-fonts-color-emoji;
+      };
+      monospace = {
+        name = "Maple Mono NF";
+        package = pkgs.maple-mono-NF;
+      };
+      sansSerif = {
+        name = "Inter";
+        package = pkgs.inter;
+      };
+      serif = {
+        name = "Merriweather";
+        package = pkgs.merriweather;
+      };
+    };
+    homeManagerIntegration = {
+      autoImport = true;
+      followSystem = true;
+    };
+    targets = {
+      console.enable = true;
+      grub.enable = true;
+    };
+    polarity = "dark";
+  };
 
   # enable flakes lmao
   nix = {

@@ -9,4 +9,6 @@ _: {
       pager = "less -FR";
     };
   };
+
+  stylix.targets.bat.enable = true;
 }

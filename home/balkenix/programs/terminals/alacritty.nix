@@ -1,6 +1,4 @@
-_: let
-  family = "IosevkaTerm Nerd Font Mono";
-in {
+_: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -15,26 +13,8 @@ in {
         decorations = "None";
         title = "Alacritty";
       };
-      font = {
-        normal = {
-          inherit family;
-          style = "Regular";
-        };
-        bold = {
-          inherit family;
-          style = "Bold";
-        };
-        italic = {
-          inherit family;
-          style = "Italic";
-        };
-        bold_italic = {
-          inherit family;
-          style = "Bold Italic";
-        };
-
-        size = 13.0;
-      };
     };
   };
+
+  stylix.targets.alacritty.enable = true;
 }

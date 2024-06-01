@@ -7,4 +7,6 @@ _: {
       "--height=40%"
     ];
   };
+
+  stylix.targets.fzf.enable = true;
 }

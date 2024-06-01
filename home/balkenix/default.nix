@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./programs/wm/river
-    ./programs/wm/waybar
+    ./programs/wm/waybar.nix
     ./programs/editors/emacs
     ./programs/cli/zsh
     ./programs/cli/git.nix
@@ -20,6 +20,7 @@
     ./programs/misc/mpv.nix
     ./programs/misc/yazi.nix
     ./programs/misc/imv.nix
+    ./programs/misc/vesktop.nix
     ./gtk.nix
     ./qt.nix
     ./fonts.nix
@@ -27,7 +28,6 @@
   ];
 
   home.packages = with pkgs; [
-    vesktop
     tomato-c
     rmg
   ];
