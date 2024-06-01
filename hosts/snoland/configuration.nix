@@ -131,7 +131,7 @@
     users.balkenix = {
       useDefaultShell = true;
       isNormalUser = true;
-      extraGroups = ["video" "audio" "wheel"];
+      extraGroups = ["video" "audio" "wheel" "input" "networkmanager"];
       packages = with pkgs; [
         firefox
         tree
@@ -169,6 +169,9 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Enable the power-profiles-daemon.
+  services.power-profiles-daemon.enable = true;
+  
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
