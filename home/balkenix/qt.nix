@@ -1,8 +1,7 @@
+
 {config, pkgs, ...}: {
   qt = {
     enable = true;
-    style = {
-      name = "Kvantum";
-    };
+    style.name = "Kvantum";
   };
 }

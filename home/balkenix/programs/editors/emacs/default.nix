@@ -36,6 +36,7 @@
         flycheck-golangci-lint
         treesit-grammars.with-all-grammars
         spacious-padding
+        dashboard
       ];
   };
 
