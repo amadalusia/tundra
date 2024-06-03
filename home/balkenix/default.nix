@@ -21,6 +21,8 @@
     ./programs/misc/yazi.nix
     ./programs/misc/imv.nix
     ./programs/misc/vesktop.nix
+    ./programs/misc/swayidle.nix
+    ./programs/misc/swaylock.nix
     ./gtk.nix
     ./qt.nix
     ./fonts.nix

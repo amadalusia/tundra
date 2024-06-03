@@ -19,7 +19,7 @@ in {
     enable = true;
     xwayland.enable = true;
     extraConfig = ''
-      for i in {0..9}; do
+      for i in {0..5}; do
         riverctl map normal ${mod} $i set-focused-tags $((1 << $(($i - 1))))
         riverctl map normal ${mod}+Shift $i set-view-tags $((1 << $(($i - 1))))
         riverctl map normal ${mod}+Control $i toggle-focused-tags $((1 << $(($i - 1))))
@@ -43,20 +43,24 @@ in {
       };
       map = {
         normal = {
+          "None Print" = "spawn '${screenshot-slurp}/bin/screenshot-slurp'";
+          "Shift Print" = "spawn '${screenshot}/bin/screenshot'";
           "${mod} Return" = "spawn '${config.programs.alacritty.package}/bin/alacritty'";
           "${mod} p" = "spawn '${config.programs.tofi.package}/bin/tofi-drun | bash'";
           "${mod}+Shift c" = "close";
           "${mod}+Shift q" = "exit";
-          "${mod} h" = "focus-view previous";
-          "${mod} j" = "focus-view down";
-          "${mod} k" = "focus-view up";
-          "${mod} l" = "focus-view next";
+          "${mod} h" = "move previous";
+          "${mod} j" = "move down";
+          "${mod} k" = "move up";
+          "${mod} l" = "move next";
           "${mod} t" = "default-layout bsp-layout";
           "${mod} f" = "default-layout";
           "${mod}+Shift Space" = "toggle-float";
           "${mod} m" = "toggle-fullscreen";
-          "None Print" = "spawn '${screenshot-slurp}/bin/screenshot-slurp'";
-          "Shift Print" = "spawn '${screenshot}/bin/screenshot'";
+          "${mod}+Shift h" = "resive left";
+          "${mod}+Shift j" = "resive down";
+          "${mod}+Shift k" = "resive up";
+          "${mod}+Shift l" = "resive right";
         };
       };
       default-layout = "bsp-layout";
