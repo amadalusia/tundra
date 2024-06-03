@@ -1,7 +1,9 @@
-{config, pkgs, ...}: let
+{ config, pkgs, ... }:
+let
   colours = config.stylix.base16Scheme;
   inherit (config.stylix) fonts;
-in {
+in
+{
   programs.waybar = {
     enable = true;
     settings = [{
@@ -10,13 +12,13 @@ in {
       modules-center = [ "river/tags" ];
       modules-right = [ "network" "battery" "tray" ];
       height = 30;
-      
+
       "custom/date" = {
         format = " {}";
         exec = "${pkgs.coreutils}/bin/date +%d.%m.%Y";
         interval = 60;
       };
-      
+
       "custom/time" = {
         format = " {}";
         exec = "${pkgs.coreutils}/bin/date +%H:%M:%S";
@@ -26,7 +28,7 @@ in {
       "river/tags" = {
         num-tags = 5;
       };
-      
+
       "network" = {
         interface = "wlan0";
         format = "{ifname}";
@@ -34,7 +36,7 @@ in {
         format-ethernet = "󰛳 {ipaddr}/{cidr}";
         format-disconnected = "";
       };
-      
+
       "battery" = {
         bat = "BAT0";
         states = {

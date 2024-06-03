@@ -1,8 +1,8 @@
-
-{lib, ...}: final: prev: {
+{ lib, ... }: final: prev: {
   catppuccin-gtk =
-    prev.callPackage (
-      args:
+    prev.callPackage
+      (
+        args:
         (prev.catppuccin-gtk.override args).overrideAttrs (attrs: {
           version = "v1.0.0-rc5";
 
@@ -35,6 +35,6 @@
             runHook postInstall
           '';
         })
-    )
-    {};
+      )
+      { };
 }

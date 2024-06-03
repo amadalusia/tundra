@@ -26,7 +26,7 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     norshfetch = {
       url = "github:balkenix/norshfetch";
       inputs.flake-parts.follows = "flake-parts";
@@ -43,41 +43,40 @@
     ];
   };
 
-  outputs = inputs @ {
-    self,
-    flake-parts,
-    nixpkgs,
-    ...
-  }:
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  outputs =
+    inputs @ { self
+    , flake-parts
+    , nixpkgs
+    , ...
+    }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
         nixosConfigurations = {
           snoland = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs;};
+            specialArgs = { inherit inputs; };
             modules = [
               ./hosts/snoland/configuration.nix
             ];
           };
         };
 
-        overlays = import ./overlays {inherit inputs;};
+        overlays = import ./overlays { inherit inputs; };
       };
 
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: {
-        _module.args.pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            inputs.emacs-overlay.overlays.default
-            inputs.norshfetch.overlays.default
-            self.overlays.default
-          ];
+      perSystem =
+        { pkgs
+        , system
+        , ...
+        }: {
+          _module.args.pkgs = import nixpkgs {
+            inherit system;
+            overlays = [
+              inputs.emacs-overlay.overlays.default
+              inputs.norshfetch.overlays.default
+            ];
+          };
+          formatter = pkgs.nixpkgs-fmt;
         };
-        formatter = pkgs.nixpkgs-fmt;
-      };
 
       systems = [
         "x86_64-linux"

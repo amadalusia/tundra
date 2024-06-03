@@ -1,10 +1,12 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   nerdfonts = pkgs.nerdfonts.override {
     fonts = [
       "IosevkaTerm"
     ];
   };
-in {
+in
+{
   fonts.fontconfig.enable = true;
 
   home.packages = [

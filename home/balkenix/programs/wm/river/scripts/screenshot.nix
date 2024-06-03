@@ -1,9 +1,8 @@
-{
-  writeShellApplication,
-  grim,
-  libnotify,
-  coreutils,
-  wl-clipboard
+{ writeShellApplication
+, grim
+, libnotify
+, coreutils
+, wl-clipboard
 }:
 
 writeShellApplication {

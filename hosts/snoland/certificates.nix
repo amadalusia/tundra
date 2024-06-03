@@ -1,6 +1,8 @@
-_: let
+_:
+let
   securly = "${builtins.readFile ./certificates/securly_ca_2034.pem}";
-in {
+in
+{
   security.pki.certificates = [
     ''
       securly

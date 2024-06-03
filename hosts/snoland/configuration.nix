@@ -1,12 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
+{ config
+, lib
+, pkgs
+, inputs
+, ...
 }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -70,7 +69,7 @@
   # enable flakes lmao
   nix = {
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
@@ -101,12 +100,12 @@
     wants = [ "graphical-session.target" ];
     after = [ "graphical-session.target" ];
     serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
+      Type = "simple";
+      ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
   };
 
 
@@ -143,7 +142,7 @@
 
   # enable OpenGL
   hardware.opengl.enable = true;
-  
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -167,7 +166,7 @@
 
   # Enable DConf
   programs.dconf.enable = true;
-  
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -178,7 +177,7 @@
     users.balkenix = {
       useDefaultShell = true;
       isNormalUser = true;
-      extraGroups = ["video" "audio" "wheel" "input" "networkmanager"];
+      extraGroups = [ "video" "audio" "wheel" "input" "networkmanager" ];
       packages = with pkgs; [
         firefox
         tree
@@ -189,7 +188,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
   };
@@ -218,7 +217,7 @@
 
   # Enable the power-profiles-daemon.
   services.power-profiles-daemon.enable = true;
-  
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

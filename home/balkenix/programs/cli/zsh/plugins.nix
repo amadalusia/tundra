@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.zsh.plugins = [
     {
       name = "agkozak-zsh-prompt";

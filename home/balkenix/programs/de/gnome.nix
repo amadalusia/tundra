@@ -1,8 +1,7 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
   home.packages =
     (with pkgs; [
@@ -66,36 +65,36 @@
 
     "org/gnome/shell/extensions/pop-shell" = {
       hint-color-rgba = "rgba(147, 138, 169, 1)";
-      activate-launcher = [""];
+      activate-launcher = [ "" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4;
-      workspace-names = ["Main" "Browsing" "Coding" "Messaging"];
+      workspace-names = [ "Main" "Browsing" "Coding" "Messaging" ];
       button-layout = "appmenu:minimize,maximize,close";
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      move-to-workspace-1 = ["<Super><Shift>1"];
-      switch-to-workspace-1 = ["<Super>1"];
+      move-to-workspace-1 = [ "<Super><Shift>1" ];
+      switch-to-workspace-1 = [ "<Super>1" ];
 
-      move-to-workspace-2 = ["<Super><Shift>2"];
-      switch-to-workspace-2 = ["'<Super>2"];
+      move-to-workspace-2 = [ "<Super><Shift>2" ];
+      switch-to-workspace-2 = [ "'<Super>2" ];
 
-      move-to-workspace-3 = ["<Super><Shift>3"];
-      switch-to-workspace-3 = ["<Super>3"];
+      move-to-workspace-3 = [ "<Super><Shift>3" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
 
       move-to-workspace-4 = "['<Super><Shift>4']";
-      switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-4 = [ "<Super>4" ];
 
-      close = ["<Shift><Super>q"];
+      close = [ "<Shift><Super>q" ];
     };
 
     "org/gnome/shell/keybindings" = {
-      switch-to-application-1 = [];
-      switch-to-application-2 = [];
-      switch-to-application-3 = [];
-      switch-to-application-4 = [];
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
     };
 
     "org/gnome/desktop/background" = {
@@ -105,8 +104,8 @@
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [(lib.gvariant.mkTuple ["xkb" "gb"])];
-      xkb-options = ["terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:ctrl_modifier"];
+      sources = [ (lib.gvariant.mkTuple [ "xkb" "gb" ]) ];
+      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:ctrl_modifier" ];
     };
 
     "org/gnome/desktop/interface" = {
