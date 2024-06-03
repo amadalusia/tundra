@@ -1,10 +1,3 @@
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-
-(add-to-list 'default-frame-alist
-             '(font . "IosevkaTerm Nerd Font Mono-13"))
-
 (require 'use-package)
 (setq use-package-always-ensure t)
 
@@ -16,14 +9,11 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(use-package doom-modeline
-  :init (doom-modeline-mode 1))
-
 (ivy-mode)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 ;; enable this if you want `swiper' to use it
-;; (setq search-default-mode #'char-fold-to-regexp)
+(setq search-default-mode #'char-fold-to-regexp)
 (global-set-key "\C-s" 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<f6>") 'ivy-resume)
