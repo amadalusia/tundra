@@ -94,6 +94,7 @@
   ];
 
   security.polkit.enable = true;
+  security.pam.services.swaylock.text = "auth include login";
   systemd.user.services.polkit-kde-authentication-agent-1 = {
     description = "polkit-kde-authentication-agent-1";
     wantedBy = [ "graphical-session.target" ];
