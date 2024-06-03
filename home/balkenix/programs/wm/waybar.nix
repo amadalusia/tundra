@@ -9,7 +9,7 @@ in {
       modules-left = [ "custom/date" "custom/time" ];
       modules-center = [ "river/tags" ];
       modules-right = [ "network" "battery" "tray" ];
-      height = 40;
+      height = 30;
       
       "custom/date" = {
         format = " {}";
