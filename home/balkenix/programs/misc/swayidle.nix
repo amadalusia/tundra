@@ -9,7 +9,7 @@
       {
         timeout = 100;
         command = "${pkgs.brightnessctl}/bin/brightnessctl set 20%-";
-        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl +20%";
+        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl set +20%";
       }
       {
         timeout = 300;

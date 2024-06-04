@@ -36,6 +36,7 @@
       base0E = "957FB8";
       base0F = "D27E99";
     };
+    cursor.size = 28;
     image = ../../home/balkenix/wallpapers/cafe.jpg;
     fonts = {
       emoji = {

@@ -6,6 +6,7 @@
     ./programs/wm/river
     ./programs/wm/waybar.nix
     ./programs/editors/emacs
+    ./programs/editors/nixvim.nix
     ./programs/cli/zsh
     ./programs/cli/git.nix
     ./programs/cli/direnv.nix
