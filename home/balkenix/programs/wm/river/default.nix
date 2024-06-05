@@ -5,15 +5,14 @@ let
   river-bsp-layout = inputs.river-bsp-layout.packages.${pkgs.system}.default;
 in
 {
-  home.packages = ([
-    screenshot-slurp
-    screenshot
-  ]) ++ (with pkgs; [
+  home.packages = with pkgs; [
     swaybg
     grim
     wl-clipboard
     libnotify
-  ]);
+    pavucontrol
+    blueberry
+  ];
 
   wayland.windowManager.river =
     let
@@ -75,4 +74,12 @@ in
         ];
       };
     };
+
+  dconf = {
+    settings = {
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "";
+      };
+    };
+  };
 }

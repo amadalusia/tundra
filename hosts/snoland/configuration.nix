@@ -165,6 +165,9 @@
     };
   };
 
+  # Printing
+  services.printing.enable = true;
+
   # Enable DConf
   programs.dconf.enable = true;
 

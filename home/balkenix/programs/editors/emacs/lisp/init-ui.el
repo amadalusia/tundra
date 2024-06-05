@@ -5,9 +5,10 @@
 (add-to-list 'default-frame-alist
              '(font . "Maple Mono NF-13"))
 
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(set-default 'truncate-lines t)
 
-(set-default 'truncate-lines nil)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
 
 (use-package doom-modeline
   :ensure t

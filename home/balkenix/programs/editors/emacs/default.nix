@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    texliveFull
+  ];
+  
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;
