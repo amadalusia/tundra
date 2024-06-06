@@ -72,7 +72,6 @@
 
         overlays = import ./overlays { inherit inputs; };
         nixosModules = import ./modules/nixos;
-        homeManagerModules = import ./modules/home-manager;
       };
 
       perSystem =
@@ -87,6 +86,7 @@
               inputs.norshfetch.overlays.default
             ];
           };
+          
           pre-commit = {
             check.enable = true;
             settings.hooks = {
