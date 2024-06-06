@@ -5,13 +5,11 @@
 ,  ...
 }: let
   cfg = config.stylix.gruvbox;
-in {
+in with lib; {
   options.stylix.gruvbox = {
-    enable = lib.mkEnableOption "gruvbox" {
-      default = false;
-    };
-    wallpaper = lib.mkOption {
-      type = lib.types.path;
+    enable = mkEnableOption "gruvbox";
+    wallpaper = mkOption {
+      type = types.path;
       default = ../../wallpapers/anime_skull.png;
       description = ''
         Set a wallpaper of your choice.
@@ -19,7 +17,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     stylix = {
       base16Scheme = {
         base00 = "1d2021";
@@ -39,7 +37,7 @@ in {
         base0E = "d3869b";
         base0F = "d65d0e";
       };
-      image = lib.optional cfg.wallpaper ../../wallpapers/1.png;
+      image = cfg.wallpaper;
     };
   };
 }

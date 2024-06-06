@@ -7,11 +7,11 @@ _: {
   programs.zsh = {
     enable = true;
     autocd = true;
-    defaultKeymap = true;
+    defaultKeymap = "emacs";
     historySubstringSearch.enable = true;
     initExtra = ''
       ${builtins.readFile scripts/init.zsh};
-      ${builtins.readFile scripts/function.zsh};
+      ${builtins.readFile scripts/functions.zsh};
     '';
   };
 }

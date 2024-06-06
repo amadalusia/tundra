@@ -1,0 +1,3 @@
+{
+  gruvbox = import ./gruvbox.nix;
+}

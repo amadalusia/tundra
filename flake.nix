@@ -56,16 +56,17 @@
     , ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      flake = {
-        imports = [
-          inputs.pre-commit-hooks-nix.flakeModule
-        ];
+      imports = [
+        inputs.pre-commit-hooks-nix.flakeModule
+      ];
         
+      flake = {config, ...}: {
         nixosConfigurations = {
           snoland = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
             modules = [
               ./hosts/snoland/configuration.nix
+              config.nixosModules.gruvbox
             ];
           };
         };
