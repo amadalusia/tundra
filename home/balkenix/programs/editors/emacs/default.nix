@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [
     texliveFull
   ];
@@ -40,6 +40,9 @@
         flycheck-golangci-lint
         treesit-grammars.with-all-grammars
         dashboard
+        page-break-lines
+        direnv
+        projectile
       ];
   };
 

@@ -10,8 +10,28 @@ in
       layer = "top";
       modules-left = [ "custom/date" "custom/time" ];
       modules-center = [ "river/tags" ];
-      modules-right = [ "network" "battery" "tray" ];
-      height = 30;
+      modules-right = [ "pulseaudio" "network" "battery" "tray" ];
+      height = 36;
+
+      "pulseaudio" = {
+        format = "{icon} {volume}%";
+        format-source = "{icon} {volume}%";
+        format-muted = "";
+        format-source-muted = "";
+        format-icons = {
+          headphone = "";
+          hands-free = "󰂯";
+          phone = "";
+          portable = "";
+          car = "";
+          default = [ "" "" ];
+        };
+        ignored-sinks = ["Easy Effects Sink"];
+        tooltip = true;
+        tooltip-format = "{desc} is at {volume}% volume right now.";
+        on-click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
+        scroll-step = 2;
+      };
 
       "custom/date" = {
         format = " {}";

@@ -2,10 +2,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(add-to-list 'default-frame-alist
-             '(font . "Maple Mono NF-13"))
-
-(set-default 'truncate-lines t)
+(set-default 'ivy-truncate-lines t)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))

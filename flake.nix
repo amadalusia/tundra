@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     stylix.url = "github:danth/stylix";
+    pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +23,7 @@
     };
 
     river-bsp-layout = {
-      url = "github:balkenix/river-bsp-layout-fix-flake";
+      url = "github:areif-dev/river-bsp-layout";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -56,6 +57,10 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
+        imports = [
+          inputs.pre-commit-hooks-nix.flakeModule
+        ];
+        
         nixosConfigurations = {
           snoland = inputs.nixpkgs.lib.nixosSystem {
             specialArgs = { inherit inputs; };
@@ -82,7 +87,16 @@
               inputs.norshfetch.overlays.default
             ];
           };
-          formatter = pkgs.nixpkgs-fmt;
+          pre-commit = {
+            check.enable = true;
+            settings.hooks = {
+              nixpkgs-fmt.enable = true;
+              deadnix.enable = true;
+              statix.enable = true;
+              nil.enable = true;
+              shellcheck.enable = true;
+            };
+          };
         };
 
       systems = [
