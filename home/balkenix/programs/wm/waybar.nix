@@ -10,14 +10,12 @@ in
       layer = "top";
       modules-left = [ "custom/date" "custom/time" ];
       modules-center = [ "river/tags" ];
-      modules-right = [ "network" "battery" "pulseaudio" "tray" ];
+      modules-right = [ "network" "battery" "pulseaudio" "backlight" "tray" ];
       height = 32;
 
       pulseaudio = {
         format = "{icon} {volume}%";
-        format-source = "{icon} {volume}%";
         format-muted = "";
-        format-source-muted = "";
         format-icons = {
           headphone = "";
           hands-free = "󰂯";
@@ -72,6 +70,16 @@ in
         ];
         format = "{icon} {capacity}%";
       };
+      backlight = {
+        device = "intel_backlight";
+        format = "{icon} {percent}%";
+        format-icons = [ "" "" ];
+      };
+      # "backlight": {
+      #     "device": "intel_backlight",
+      #     "format": "{percent}% {icon}",
+      #     "format-icons": ["", ""]
+      # }
     }];
     style = ''
       * {
@@ -93,7 +101,8 @@ in
       #network,
       #battery,
       #tray,
-      #pulseaudio {
+      #pulseaudio,
+      #backlight {
         padding: 0px 8px;
         color: #${colours.base00};
       }
@@ -120,6 +129,11 @@ in
 
       #pulseaudio {
         background-color: #${colours.base0C};
+        border-bottom: none;
+      }
+
+      #backlight {
+        background-color: #${colours.base0D};
         border-bottom: none;
       }
     '';
