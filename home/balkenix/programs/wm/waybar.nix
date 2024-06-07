@@ -10,10 +10,10 @@ in
       layer = "top";
       modules-left = [ "custom/date" "custom/time" ];
       modules-center = [ "river/tags" ];
-      modules-right = [ "pulseaudio" "network" "battery" "tray" ];
-      height = 36;
+      modules-right = [ "network" "battery" "pulseaudio" "tray" ];
+      height = 32;
 
-      "pulseaudio" = {
+      pulseaudio = {
         format = "{icon} {volume}%";
         format-source = "{icon} {volume}%";
         format-muted = "";
@@ -29,7 +29,7 @@ in
         ignored-sinks = ["Easy Effects Sink"];
         tooltip = true;
         tooltip-format = "{desc} is at {volume}% volume right now.";
-        on-click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
+        on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
         scroll-step = 2;
       };
 
@@ -49,7 +49,7 @@ in
         num-tags = 5;
       };
 
-      "network" = {
+      network = {
         interface = "wlan0";
         format = "{ifname}";
         format-wifi = " {essid} ({signalStrength}%)";
@@ -57,7 +57,7 @@ in
         format-disconnected = "";
       };
 
-      "battery" = {
+      battery = {
         bat = "BAT0";
         states = {
           warning = 25;
@@ -92,27 +92,33 @@ in
       #custom-time,
       #network,
       #battery,
-      #tray {
+      #tray,
+      #pulseaudio {
         padding: 0px 8px;
         color: #${colours.base00};
       }
 
       #custom-date {
-        background-color: #${colours.base06};
-        border-bottom: none;
-      }
-
-      #custom-time {
         background-color: #${colours.base08};
         border-bottom: none;
       }
 
+      #custom-time {
+        background-color: #${colours.base09};
+        border-bottom: none;
+      }
+
       #network {
-        background-color: #${colours.base0B};
+        background-color: #${colours.base0A};
         border-bottom: none;
       }
 
       #battery {
+        background-color: #${colours.base0B};
+        border-bottom: none;
+      }
+
+      #pulseaudio {
         background-color: #${colours.base0C};
         border-bottom: none;
       }

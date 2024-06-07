@@ -29,7 +29,7 @@
         lsp-treemacs
         which-key
         dap-mode
-        helm-lsp
+        helm
         tree-sitter
         magit
         vertico

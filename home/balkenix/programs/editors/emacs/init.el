@@ -133,3 +133,5 @@
 
 (use-package typescript-mode
   :mode ("\\*.ts\\'" "\\*.js\\'"))
+
+(use-package helm :config (require 'helm-autoloads))

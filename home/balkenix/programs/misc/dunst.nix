@@ -5,6 +5,7 @@ _: {
       global = {
         width = 400;
         height = 250;
+        offset = [ "10" "42" ];
       };
     };
   };

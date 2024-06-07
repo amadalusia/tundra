@@ -23,6 +23,7 @@
     ./programs/misc/vesktop.nix
     ./programs/misc/swayidle.nix
     ./programs/misc/swaylock.nix
+    ./programs/misc/retroarch.nix
     ./gtk.nix
     ./qt.nix
     ./fonts.nix

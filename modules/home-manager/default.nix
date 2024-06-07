@@ -1,5 +1,3 @@
-_: {
-  imports = [
-    ./swayfx.nix
-  ];
+{
+  retroarch = import ./retroarch.nix;
 }
