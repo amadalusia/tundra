@@ -1,7 +1,15 @@
-{ pkgs, config, lib, ... }: let
+{ pkgs, config, lib, ... }:
+with lib;
+let
   cfg = config.programs.retroarch;
-  
-in with lib; {
+  toCFG = generators.toINI {
+    mkKeyValue = generators.mkKeyValueDefault {
+      mkValueString = v:
+        if v == isString v then ''"${v}"''
+        else generators.mkValueStringDefault {} v;
+    } " = ";
+  };
+in {
   options.programs.retroarch = {
     enable = mkEnableOption "RetroArch";
     cores = mkOption {
@@ -11,8 +19,8 @@ in with lib; {
       '';
     };
     extraConfig = mkOption {
-      type = with types; nullOr lines;
-      default = "";
+      type = types.attrs;
+      default = {};
       description = ''
         Provide options for RetroArch.
       '';
@@ -30,7 +38,9 @@ in with lib; {
     ];
 
     xdg.configFile = {
-      "retroarch/retroarch.cfg".text = cfg.extraConfig;
+      "retroarch/retroarch.cfg" = {
+        source = toCFG "retroarch-settings" cfg.extraConfig;
+      };
     };
   };
 }

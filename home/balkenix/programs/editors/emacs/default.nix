@@ -9,6 +9,7 @@
     extraConfig = ''
       ${builtins.readFile ./init.el}
       ${builtins.readFile ./lisp/init-ui.el}
+      ${builtins.readFile ./lisp/init-lsp.el}
     '';
     extraPackages = epkgs:
       with epkgs; [
@@ -17,6 +18,7 @@
         avy
         swiper
         ivy
+        lsp-ivy
         counsel
         doom-modeline
         nix-mode
@@ -29,7 +31,6 @@
         lsp-treemacs
         which-key
         dap-mode
-        helm
         tree-sitter
         magit
         vertico

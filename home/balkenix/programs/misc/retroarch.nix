@@ -9,5 +9,8 @@
       mesen
       melonds
     ];
+    extraConfig = {
+      menu_driver = "rgui";
+    };
   };
 }

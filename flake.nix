@@ -88,6 +88,10 @@
               inputs.norshfetch.overlays.default
             ];
           };
+
+          devShells.default = pkgs.mkShell {
+            packages = [ pkgs.nixd ];
+          };
           
           pre-commit = {
             check.enable = true;

@@ -47,30 +47,6 @@
     :config
     (which-key-mode))
 
-(use-package nix-mode
-  :mode ("\\.nix\\'" "\\.nix.in\\'"))
-
-(use-package nix-drv-mode
-  :ensure nix-mode
-  :mode "\\.drv\\'")
-
-(use-package nix-shell
-  :ensure nix-mode
-  :commands (nix-shell-unpack nix-shell-configure nix-shell-build))
-
-(use-package nix-repl
-  :ensure nix-mode
-  :commands (nix-repl))
-
-(use-package lsp-mode
-  :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
 
 (use-package magit
   :bind (("C-x g" . magit-status)
@@ -133,5 +109,3 @@
 
 (use-package typescript-mode
   :mode ("\\*.ts\\'" "\\*.js\\'"))
-
-(use-package helm :config (require 'helm-autoloads))
