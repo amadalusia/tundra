@@ -2,13 +2,6 @@
 with lib;
 let
   cfg = config.programs.retroarch;
-  toCFG = generators.toINI {
-    mkKeyValue = generators.mkKeyValueDefault {
-      mkValueString = v:
-        if v == isString v then ''"${v}"''
-        else generators.mkValueStringDefault {} v;
-    } " = ";
-  };
 in {
   options.programs.retroarch = {
     enable = mkEnableOption "RetroArch";
@@ -18,13 +11,14 @@ in {
         Download cores to use with RetroArch.
       '';
     };
-    extraConfig = mkOption {
-      type = types.attrs;
-      default = {};
-      description = ''
-        Provide options for RetroArch.
-      '';
-    };
+    extraConfig = with types;
+      mkOption {
+        type = attrsOf (oneOf [int float bool string]);
+        default = {};
+        description = ''
+          Provide options for RetroArch.
+        '';
+      };
     finalPackage = mkOption {
       type = types.package;
       default = (pkgs.retroarch.override {
@@ -39,7 +33,13 @@ in {
 
     xdg.configFile = {
       "retroarch/retroarch.cfg" = {
-        source = toCFG "retroarch-settings" cfg.extraConfig;
+        text = generators.toKeyValue {
+          mkKeyValue = generators.mkKeyValueDefault {
+            mkValueString = v:
+              if v == isString v then ''"${v}"''
+              else generators.mkValueStringDefault v;
+          };
+        } cfg.extraConfig;
       };
     };
   };
