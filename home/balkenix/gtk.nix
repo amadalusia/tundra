@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-let
-in {
+_: {
   gtk.enable = true;
   stylix.targets.gtk.enable = true;
 }

@@ -1,3 +1,1 @@
-{
-  retroarch = import ./retroarch.nix;
-}
+{ retroarch = import ./retroarch.nix; }

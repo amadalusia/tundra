@@ -1,19 +1,20 @@
-{ inputs
-, pkgs
-, ...
-}: {
+{ inputs, pkgs, ... }:
+{
   imports = [
     ./programs/wm/river
     ./programs/wm/waybar.nix
     ./programs/editors/emacs
     ./programs/editors/nixvim.nix
     ./programs/cli/zsh
+    ./programs/cli/tmux
     ./programs/cli/git.nix
     ./programs/cli/direnv.nix
     ./programs/cli/bat.nix
     ./programs/cli/fzf.nix
     ./programs/cli/lazygit.nix
+    ./programs/cli/starship.nix
     ./programs/terminals/alacritty.nix
+    ./programs/terminals/foot.nix
     ./programs/misc/rofi.nix
     ./programs/misc/tofi.nix
     ./programs/misc/dunst.nix

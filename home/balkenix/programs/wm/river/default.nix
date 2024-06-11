@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 let
   screenshot = pkgs.callPackage ./scripts/screenshot.nix { };
   screenshot-slurp = pkgs.callPackage ./scripts/screenshot-slurp.nix { };
@@ -48,8 +53,8 @@ in
           normal = {
             "None Print" = "spawn '${screenshot-slurp}/bin/screenshot-slurp'";
             "Shift Print" = "spawn '${screenshot}/bin/screenshot'";
-            "${mod} Return" = "spawn '${config.programs.alacritty.package}/bin/alacritty'";
-            "${mod} p" = "spawn '${config.programs.tofi.package}/bin/tofi-drun | bash'";
+            "${mod} Return" = "spawn '${config.programs.foot.package}/bin/foot'";
+            "${mod} p" = "spawn '${config.programs.tofi.package}/bin/tofi-drun | ${pkgs.bash}/bin/bash'";
             "${mod}+Shift c" = "close";
             "${mod}+Shift q" = "exit";
             "${mod} h" = "move left 100";

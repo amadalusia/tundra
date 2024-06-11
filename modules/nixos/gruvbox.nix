@@ -1,11 +1,11 @@
 # Gruvbox Dark Hard
 
-{ lib
-, config
-,  ...
-}: let
+{ lib, config, ... }:
+let
   cfg = config.stylix.gruvbox;
-in with lib; {
+in
+with lib;
+{
   options.stylix.gruvbox = {
     enable = mkEnableOption "gruvbox";
     wallpaper = mkOption {

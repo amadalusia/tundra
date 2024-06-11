@@ -6,81 +6,106 @@ in
 {
   programs.waybar = {
     enable = true;
-    settings = [{
-      layer = "top";
-      modules-left = [ "custom/date" "custom/time" ];
-      modules-center = [ "river/tags" ];
-      modules-right = [ "network" "battery" "pulseaudio" "backlight" "tray" ];
-      height = 32;
-
-      pulseaudio = {
-        format = "{icon} {volume}%";
-        format-muted = "";
-        format-icons = {
-          headphone = "";
-          hands-free = "󰂯";
-          phone = "";
-          portable = "";
-          car = "";
-          default = [ "" "" ];
-        };
-        ignored-sinks = ["Easy Effects Sink"];
-        tooltip = true;
-        tooltip-format = "{desc} is at {volume}% volume right now.";
-        on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
-        scroll-step = 2;
-      };
-
-      "custom/date" = {
-        format = " {}";
-        exec = "${pkgs.coreutils}/bin/date +%d.%m.%Y";
-        interval = 60;
-      };
-
-      "custom/time" = {
-        format = " {}";
-        exec = "${pkgs.coreutils}/bin/date +%H:%M:%S";
-        interval = 1;
-      };
-
-      "river/tags" = {
-        num-tags = 5;
-      };
-
-      network = {
-        interface = "wlan0";
-        format = "{ifname}";
-        format-wifi = " {essid} ({signalStrength}%)";
-        format-ethernet = "󰛳 {ipaddr}/{cidr}";
-        format-disconnected = "";
-      };
-
-      battery = {
-        bat = "BAT0";
-        states = {
-          warning = 25;
-          critical = 10;
-        };
-        format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
+    settings = [
+      {
+        layer = "top";
+        modules-left = [
+          "custom/date"
+          "custom/time"
         ];
-        format = "{icon} {capacity}%";
-      };
-      backlight = {
-        device = "intel_backlight";
-        format = "{icon} {percent}%";
-        format-icons = [ "" "" ];
-      };
-      # "backlight": {
-      #     "device": "intel_backlight",
-      #     "format": "{percent}% {icon}",
-      #     "format-icons": ["", ""]
-      # }
-    }];
+        modules-center = [ "river/tags" ];
+        modules-right = [
+          "network"
+          "battery"
+          "pulseaudio"
+          "backlight"
+          "memory"
+          "tray"
+        ];
+        height = 32;
+
+        pulseaudio = {
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = {
+            headphone = "";
+            hands-free = "󰂯";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [
+              ""
+              ""
+            ];
+          };
+          ignored-sinks = [ "Easy Effects Sink" ];
+          tooltip = true;
+          tooltip-format = "{desc} is at {volume}% volume right now.";
+          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          scroll-step = 2;
+        };
+
+        "custom/date" = {
+          format = " {}";
+          exec = "${pkgs.coreutils}/bin/date +%d.%m.%Y";
+          interval = 60;
+        };
+
+        "custom/time" = {
+          format = " {}";
+          exec = "${pkgs.coreutils}/bin/date +%H:%M:%S";
+          interval = 1;
+        };
+
+        "river/tags" = {
+          num-tags = 5;
+        };
+
+        network = {
+          interface = "wlan0";
+          format = "{ifname}";
+          format-wifi = " {essid} ({signalStrength}%)";
+          format-ethernet = "󰛳 {ipaddr}/{cidr}";
+          format-disconnected = "";
+        };
+
+        memory = {
+          interval = 30;
+          format = " {percentage}%";
+          tooltip = true;
+          tooltip-format = "{used:0.1f}G/{total:0.1f}G";
+        };
+
+        battery = {
+          bat = "BAT0";
+          states = {
+            warning = 25;
+            critical = 10;
+          };
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+          format = "{icon} {capacity}%";
+        };
+        backlight = {
+          device = "intel_backlight";
+          format = "{icon} {percent}%";
+          format-icons = [
+            ""
+            ""
+          ];
+        };
+        # "backlight": {
+        #     "device": "intel_backlight",
+        #     "format": "{percent}% {icon}",
+        #     "format-icons": ["", ""]
+        # }
+      }
+    ];
     style = ''
       * {
         font-family: ${fonts.monospace.name};
@@ -102,7 +127,8 @@ in
       #battery,
       #tray,
       #pulseaudio,
-      #backlight {
+      #backlight,
+      #memory {
         padding: 0px 8px;
         color: #${colours.base00};
       }
@@ -134,6 +160,11 @@ in
 
       #backlight {
         background-color: #${colours.base0D};
+        border-bottom: none;
+      }
+
+      #memory {
+        background-color: #${colours.base0E};
         border-bottom: none;
       }
     '';

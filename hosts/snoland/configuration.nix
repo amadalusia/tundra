@@ -1,12 +1,14 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{ config
-, lib
-, pkgs
-, inputs
-, ...
-}: {
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.disko.nixosModules.disko
@@ -17,6 +19,7 @@
   ];
 
   stylix = {
+    enable = true;
     autoEnable = false;
     cursor.size = 28;
     fonts = {
@@ -55,14 +58,15 @@
   # enable flakes lmao
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
       ];
-      trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
+      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
     };
   };
 
@@ -93,7 +97,6 @@
       TimeoutStopSec = 10;
     };
   };
-
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.grub = {
@@ -148,7 +151,10 @@
     enable = true;
     wlr.enable = true;
     config = {
-      common.default = [ "wlr" "gtk" ];
+      common.default = [
+        "wlr"
+        "gtk"
+      ];
     };
   };
 
@@ -168,7 +174,13 @@
     users.balkenix = {
       useDefaultShell = true;
       isNormalUser = true;
-      extraGroups = [ "video" "audio" "wheel" "input" "networkmanager" ];
+      extraGroups = [
+        "video"
+        "audio"
+        "wheel"
+        "input"
+        "networkmanager"
+      ];
       packages = with pkgs; [
         firefox
         tree
@@ -179,7 +191,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
   };

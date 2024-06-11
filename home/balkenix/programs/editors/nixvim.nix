@@ -1,7 +1,6 @@
-{ inputs, ... }: {
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-  ];
+{ inputs, ... }:
+{
+  imports = [ inputs.nixvim.homeManagerModules.nixvim ];
 
   programs.nixvim = {
     enable = true;
@@ -11,6 +10,6 @@
       };
     };
   };
-  
+
   stylix.targets.nixvim.enable = true;
 }

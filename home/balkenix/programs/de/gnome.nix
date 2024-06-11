@@ -1,12 +1,12 @@
-{ config
-, pkgs
-, lib
-, ...
-}: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   home.packages =
-    (with pkgs; [
-      gnome.gnome-tweaks
-    ])
+    (with pkgs; [ gnome.gnome-tweaks ])
     ++ (with pkgs.gnomeExtensions; [
       space-bar
       user-themes
@@ -70,7 +70,12 @@
 
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 4;
-      workspace-names = [ "Main" "Browsing" "Coding" "Messaging" ];
+      workspace-names = [
+        "Main"
+        "Browsing"
+        "Coding"
+        "Messaging"
+      ];
       button-layout = "appmenu:minimize,maximize,close";
     };
 
@@ -104,8 +109,17 @@
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [ (lib.gvariant.mkTuple [ "xkb" "gb" ]) ];
-      xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "caps:ctrl_modifier" ];
+      sources = [
+        (lib.gvariant.mkTuple [
+          "xkb"
+          "gb"
+        ])
+      ];
+      xkb-options = [
+        "terminate:ctrl_alt_bksp"
+        "lv3:ralt_switch"
+        "caps:ctrl_modifier"
+      ];
     };
 
     "org/gnome/desktop/interface" = {

@@ -1,8 +1,7 @@
-{ config, pkgs, ... }: {
-  home.packages = with pkgs; [
-    texliveFull
-  ];
-  
+{ config, pkgs, ... }:
+{
+  home.packages = with pkgs; [ texliveFull ];
+
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-unstable;
@@ -11,8 +10,8 @@
       ${builtins.readFile ./lisp/init-ui.el}
       ${builtins.readFile ./lisp/init-lsp.el}
     '';
-    extraPackages = epkgs:
-      with epkgs; [
+    extraPackages =
+      epkgs: with epkgs; [
         use-package
         async
         avy

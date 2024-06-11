@@ -1,3 +1,1 @@
-{
-  gruvbox = import ./gruvbox.nix;
-}
+{ gruvbox = import ./gruvbox.nix; }

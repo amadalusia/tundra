@@ -1,14 +1,20 @@
-{ writeShellApplication
-, grim
-, libnotify
-, coreutils
-, wl-clipboard
+{
+  writeShellApplication,
+  grim,
+  libnotify,
+  coreutils,
+  wl-clipboard,
 }:
 
 writeShellApplication {
   name = "screenshot";
 
-  runtimeInputs = [ grim libnotify wl-clipboard coreutils ];
+  runtimeInputs = [
+    grim
+    libnotify
+    wl-clipboard
+    coreutils
+  ];
 
   text = ''
     SCREENSHOT="$HOME/Pictures/Screenshots/$(${coreutils}/bin/date +%a-%d-%h-%Y\ %T).png"

@@ -41,46 +41,40 @@
   };
 
   nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
+    extra-substituters = [ "https://nix-community.cachix.org" ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
 
   outputs =
-    inputs @ { self
-    , flake-parts
-    , nixpkgs
-    , ...
-    }:
+    inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        inputs.pre-commit-hooks-nix.flakeModule
-      ];
-        
-      flake = {config, ...}: {
-        nixosConfigurations = {
-          snoland = inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            modules = [
-              ./hosts/snoland/configuration.nix
-              config.nixosModules.gruvbox
-            ];
+      imports = [ inputs.pre-commit-hooks-nix.flakeModule ];
+
+      flake =
+        { config, ... }:
+        {
+          nixosConfigurations = {
+            snoland = inputs.nixpkgs.lib.nixosSystem {
+              specialArgs = {
+                inherit inputs;
+              };
+              modules = [
+                ./hosts/snoland/configuration.nix
+                config.nixosModules.gruvbox
+              ];
+            };
           };
+
+          overlays = import ./overlays { inherit inputs; };
+          nixosModules = import ./modules/nixos;
+          homeManagerModules = import ./modules/home-manager;
         };
 
-        overlays = import ./overlays { inherit inputs; };
-        nixosModules = import ./modules/nixos;
-        homeManagerModules = import ./modules/home-manager;
-      };
-
       perSystem =
-        { pkgs
-        , system
-        , ...
-        }: {
+        { pkgs, system, ... }:
+        {
           _module.args.pkgs = import nixpkgs {
             inherit system;
             overlays = [
@@ -89,24 +83,19 @@
             ];
           };
 
-          devShells.default = pkgs.mkShell {
-            packages = [ pkgs.nixd ];
-          };
-          
+          devShells.default = pkgs.mkShell { packages = [ pkgs.nixd ]; };
+
           pre-commit = {
             check.enable = true;
             settings.hooks = {
-              nixpkgs-fmt.enable = true;
-              deadnix.enable = true;
-              statix.enable = true;
-              nil.enable = true;
-              shellcheck.enable = true;
+              nixfmt = {
+                enable = true;
+                package = pkgs.nixfmt-rfc-style;
+              };
             };
           };
         };
 
-      systems = [
-        "x86_64-linux"
-      ];
+      systems = [ "x86_64-linux" ];
     };
 }

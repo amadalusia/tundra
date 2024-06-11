@@ -1,15 +1,22 @@
-{ writeShellApplication
-, grim
-, slurp
-, libnotify
-, coreutils
-, wl-clipboard
+{
+  writeShellApplication,
+  grim,
+  slurp,
+  libnotify,
+  coreutils,
+  wl-clipboard,
 }:
 
 writeShellApplication {
   name = "screenshot-slurp";
 
-  runtimeInputs = [ grim slurp libnotify wl-clipboard coreutils ];
+  runtimeInputs = [
+    grim
+    slurp
+    libnotify
+    wl-clipboard
+    coreutils
+  ];
 
   text = ''
     GEOMETRY="$(${slurp}/bin/slurp)"
