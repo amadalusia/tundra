@@ -24,6 +24,7 @@
         rust-mode
         typescript-mode
         go-mode
+        clojure-mode
         lsp-mode
         lsp-ui
         lsp-ivy
