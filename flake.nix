@@ -73,7 +73,12 @@
         };
 
       perSystem =
-        { pkgs, system, ... }:
+        {
+          pkgs,
+          system,
+          config,
+          ...
+        }:
         {
           _module.args.pkgs = import nixpkgs {
             inherit system;
@@ -83,8 +88,6 @@
             ];
           };
 
-          devShells.default = pkgs.mkShell { packages = [ pkgs.nixd ]; };
-
           pre-commit = {
             check.enable = true;
             settings.hooks = {
@@ -92,8 +95,12 @@
                 enable = true;
                 package = pkgs.nixfmt-rfc-style;
               };
+              nil.enable = true;
             };
           };
+
+          devShells.default = pkgs.mkShell { packages = [ pkgs.nixd ]; };
+          formatter = config.pre-commit.settings.hooks.nixfmt.package;
         };
 
       systems = [ "x86_64-linux" ];

@@ -1,4 +1,3 @@
-
 { inputs, pkgs, ... }:
 {
   imports = [ inputs.self.homeManagerModules.retroarch ];
@@ -25,7 +24,7 @@
       rgui_menu_theme_preset = "";
       rgui_particle_effect = 1;
       rgui_particle_effect_screensaver = true;
-      rgui_particle_effect_speed = 0.800000;
+      rgui_particle_effect_speed = 0.8;
       rgui_show_start_screen = false;
       rgui_swap_thumbnails = false;
       rgui_switch_icons = true;
