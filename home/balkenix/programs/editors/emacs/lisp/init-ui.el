@@ -5,8 +5,10 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(setq inhibit-startup-message t) 
-(setq initial-scratch-message nil)
+(setq-default inhibit-startup-screen t)
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message "")
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
