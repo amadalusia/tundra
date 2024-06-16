@@ -50,7 +50,7 @@
     };
     gruvbox = {
       enable = true;
-      wallpaper = ../../wallpapers/anime_skull.png;
+      wallpaper = ../../wallpapers/gruvbox/gruvbox_spac.jpg;
     };
     polarity = "dark";
   };
