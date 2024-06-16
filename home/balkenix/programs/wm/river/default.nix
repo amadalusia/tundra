@@ -19,6 +19,8 @@ in
     blueberry
   ];
 
+  services.gpg-agent.enableSshSupport = true;
+
   wayland.windowManager.river =
     let
       mod = "Super";
