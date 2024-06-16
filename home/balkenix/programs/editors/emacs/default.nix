@@ -6,19 +6,24 @@
     enable = true;
     package = pkgs.emacs-unstable;
     extraConfig = ''
+      (require 'init-icomp "${./lisp/init-icomp.el}")
+      (require 'init-lsp "${./lisp/init-lsp.el}")
+      (require 'init-ui "${./lisp/init-ui.el}")
+
       ${builtins.readFile ./init.el}
-      ${builtins.readFile ./lisp/init-ui.el}
-      ${builtins.readFile ./lisp/init-lsp.el}
     '';
     extraPackages =
       epkgs: with epkgs; [
         use-package
         async
         avy
-        swiper
-        ivy
-        lsp-ivy
-        counsel
+        vertico
+        orderless
+        marginalia
+        mct
+        embark
+        consult
+        embark-consult
         doom-modeline
         nix-mode
         rust-mode

@@ -1,8 +1,12 @@
+;;; init-ui --- sets up ui
+;;; Commentary:
+;;; Code:
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(set-default 'ivy-truncate-lines t)
+(setq inhibit-startup-message t) 
+(setq initial-scratch-message nil)
 
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook (lambda () (setq truncate-lines nil)))
@@ -14,3 +18,6 @@
 (setq doom-modeline-height 30)
 (setq doom-modeline-icon t)
 (setq doom-modeline-lsp t)
+
+(provide 'init-ui)
+;;; init-ui.el ends here

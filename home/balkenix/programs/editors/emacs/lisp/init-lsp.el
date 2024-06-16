@@ -1,3 +1,6 @@
+;;; init-lsp --- sets up lsp
+;;; Commentary:
+;;; Code:
 (use-package lsp-mode
   :ensure t
   :init
@@ -20,3 +23,6 @@
 (use-package nix-mode
   :hook (nix-mode . lsp-deferred)
   :ensure t)
+
+(provide 'init-lsp)
+;;; init-lsp.el ends here
