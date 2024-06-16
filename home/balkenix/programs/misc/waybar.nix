@@ -167,6 +167,19 @@ in
         background-color: #${colours.base0E};
         border-bottom: none;
       }
+
+      #tags button {
+        padding: 0px 8px;
+      }
+
+      #tags button.focused {
+        background-color: #${colours.base01};
+      }
+
+      #tags button.urgent {
+        background-color: #${colours.base09};
+        color: #${colours.base00};
+      }
     '';
   };
 }

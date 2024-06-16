@@ -19,7 +19,12 @@ in
     blueberry
   ];
 
-  services.gpg-agent.enableSshSupport = true;
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryPackage = pkgs.pinentry-qt;
+    enableZshIntegration = true;
+  };
 
   wayland.windowManager.river =
     let
