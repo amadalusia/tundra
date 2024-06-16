@@ -1,1 +1,4 @@
-{ retroarch = import ./retroarch.nix; }
+{
+  retroarch = import ./retroarch.nix;
+  vesktop = import ./vesktop.nix;
+}
