@@ -1,8 +1,7 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./programs/wm/river
-    ./programs/wm/waybar.nix
     ./programs/editors/emacs
     ./programs/editors/nixvim.nix
     ./programs/cli/zsh
@@ -25,6 +24,7 @@
     ./programs/misc/swayidle.nix
     ./programs/misc/swaylock.nix
     ./programs/misc/retroarch.nix
+    ./programs/misc/waybar.nix
     ./gtk.nix
     ./qt.nix
     ./fonts.nix

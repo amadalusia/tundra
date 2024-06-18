@@ -7,37 +7,12 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     stylix.url = "github:danth/stylix";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    river-bsp-layout = {
-      url = "github:areif-dev/river-bsp-layout";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    norshfetch = {
-      url = "github:balkenix/norshfetch";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    disko.url = "github:nix-community/disko";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    river-bsp-layout.url  = "github:areif-dev/river-bsp-layout";
+    norshfetch.url = "github:balkenix/norshfetch";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   nixConfig = {
