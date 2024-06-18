@@ -44,23 +44,23 @@ in
             ];
           };
         };
-    
+
         "custom/date" = {
           format = " {}";
           exec = "${pkgs.coreutils}/bin/date +%d.%m.%Y";
           interval = 60;
         };
-    
+
         "custom/time" = {
           format = " {}";
           exec = "${pkgs.coreutils}/bin/date +%H:%M:%S";
           interval = 1;
         };
-    
+
         "river/tags" = {
           num-tags = 6;
         };
-    
+
         network = {
           interface = "wlan0";
           format = "{ifname}";
@@ -68,14 +68,14 @@ in
           format-ethernet = "󰛳 {ipaddr}/{cidr}";
           format-disconnected = "";
         };
-    
+
         memory = {
           interval = 2;
           format = " {percentage}%";
           tooltip = true;
           tooltip-format = "{used:0.1f}G/{total:0.1f}G";
         };
-    
+
         battery = {
           bat = "BAT0";
           states = {
@@ -108,14 +108,14 @@ in
         border: none;
         border-radius: 0;
       }
-    
+
       window#waybar {
         background-color: #${colours.base00};
         color: #${colours.base05};
         border-bottom: 3px solid #${colours.base01};
         margin: 0px 10px;
       }
-    
+
       #custom-date,
       #custom-time,
       #network,
@@ -127,50 +127,50 @@ in
         padding: 0px 8px;
         color: #${colours.base00};
       }
-    
+
       #custom-date {
         background-color: #${colours.base08};
         border-bottom: none;
       }
-    
+
       #custom-time {
         background-color: #${colours.base09};
         border-bottom: none;
       }
-    
+
       #network {
         background-color: #${colours.base0A};
         border-bottom: none;
       }
-    
+
       #battery {
         background-color: #${colours.base0B};
         border-bottom: none;
       }
-    
+
       #pulseaudio {
         background-color: #${colours.base0C};
         border-bottom: none;
       }
-    
+
       #backlight {
         background-color: #${colours.base0D};
         border-bottom: none;
       }
-    
+
       #memory {
         background-color: #${colours.base0E};
         border-bottom: none;
       }
-    
+
       #tags button {
         padding: 0px 8px;
       }
-    
+
       #tags button.focused {
         background-color: #${colours.base01};
       }
-    
+
       #tags button.urgent {
         background-color: #${colours.base09};
         color: #${colours.base00};

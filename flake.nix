@@ -10,7 +10,7 @@
     disko.url = "github:nix-community/disko";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
-    river-bsp-layout.url  = "github:areif-dev/river-bsp-layout";
+    river-bsp-layout.url = "github:areif-dev/river-bsp-layout";
     norshfetch.url = "github:balkenix/norshfetch";
     nixvim.url = "github:nix-community/nixvim";
   };
