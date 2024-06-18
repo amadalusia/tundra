@@ -58,7 +58,7 @@ in
         };
 
         "river/tags" = {
-          num-tags = 5;
+          num-tags = 6;
         };
 
         network = {

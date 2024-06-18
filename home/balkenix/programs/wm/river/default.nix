@@ -8,6 +8,7 @@ let
   screenshot = pkgs.callPackage ./scripts/screenshot.nix { };
   screenshot-slurp = pkgs.callPackage ./scripts/screenshot-slurp.nix { };
   river-bsp-layout = inputs.river-bsp-layout.packages.${pkgs.system}.default;
+  colors = config.stylix.base16Scheme;
 in
 {
   home.packages = with pkgs; [
@@ -34,11 +35,13 @@ in
       enable = true;
       xwayland.enable = true;
       extraConfig = ''
-        for i in {0..5}; do
-          riverctl map normal ${mod} $i set-focused-tags $((1 << $(($i - 1))))
-          riverctl map normal ${mod}+Shift $i set-view-tags $((1 << $(($i - 1))))
-          riverctl map normal ${mod}+Control $i toggle-focused-tags $((1 << $(($i - 1))))
-          riverctl map normal ${mod}+Control+Shift $i toggle-view-tags $((1 << $(($i - 1))))
+        for i in $(seq 1 6)
+        do
+            tags=$((1 << ($i - 1)))
+            riverctl map normal Super $i set-focused-tags $tags
+            riverctl map normal Super+Shift $i set-view-tags $tags
+            riverctl map normal Super+Control $i toggle-focused-tags $tags
+            riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
         done
       '';
 
@@ -54,6 +57,10 @@ in
         };
         border-width = 3;
         rule-add = {
+          "-app-id" = {
+            "'imv'" = "float";
+            "'mpv'" = "float";
+          };
           "ssd" = "";
         };
         map = {
@@ -76,6 +83,14 @@ in
             "${mod}+Shift j" = "resize vertical -100";
             "${mod}+Shift k" = "resize vertical 100";
             "${mod}+Shift l" = "resize horizontal 100";
+            "${mod} Tab" = "swap next";
+            "${mod}+Shift Tab" = "swap previous";
+          };
+        };
+        map-pointer = {
+          normal = {
+            "${mod} BTN_LEFT" = "move-view";
+            "${mod} BTN_RIGHT" = "resize-view";
           };
         };
         default-layout = "bsp-layout";
@@ -84,13 +99,15 @@ in
           "'${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image}'"
           "'${config.programs.waybar.package}/bin/waybar'"
         ];
+        border-color-focused = "0x${colors.base0B}";
+        border-color-unfocused = "0x${colors.base03}";
       };
     };
 
   dconf = {
     settings = {
       "org/gnome/desktop/wm/preferences" = {
-        button-layout = "";
+        button-layout = "close";
       };
     };
   };
