@@ -74,8 +74,7 @@
             };
           };
 
-          devShells.default = pkgs.mkShell { packages = [ pkgs.nixd ]; };
-          formatter = config.pre-commit.settings.hooks.nixfmt.package;
+          devShells.default = config.pre-commit.devShell;
         };
 
       systems = [ "x86_64-linux" ];
