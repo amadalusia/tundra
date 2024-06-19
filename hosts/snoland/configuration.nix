@@ -67,34 +67,74 @@
         "https://cache.nixos.org/"
       ];
       trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+      max-jobs = 16;
     };
   };
 
-  # non foss
-  nixpkgs.config.allowUnfree = true;
+  services.earlyoom = {
+    enable = true;
+    enableNotifications = true;
+    extraArgs =
+      let
+        catPatterns = patterns: builtins.concatStringsSep "|" patterns;
+        preferPatterns = [
+          ".firefox-wrappe"
+          "hercules-ci-age"
+          "ipfs"
+          "java" # If it's written in java it's uninmportant enough it's ok to kill it
+          ".jupyterhub-wra"
+          "Logseq"
+        ];
+        avoidPatterns = [
+          "bash"
+          "mosh-server"
+          "sshd"
+          "systemd"
+          "systemd-logind"
+          "systemd-udevd"
+          "tmux: client"
+          "tmux: server"
+        ];
+      in
+      [
+        "--prefer '^(${catPatterns preferPatterns})$'"
+        "--avoid '^(${catPatterns avoidPatterns})$'"
+      ];
+  };
 
-  # overlays
-  nixpkgs.overlays = [
-    inputs.emacs-overlay.overlays.default
-    inputs.norshfetch.overlays.default
-    inputs.self.overlays.unstable-packages
-    inputs.self.overlays.modifications
-    inputs.self.overlays.additions
-  ];
+  # non foss
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.emacs-overlay.overlays.default
+      inputs.norshfetch.overlays.default
+      inputs.self.overlays.unstable-packages
+      inputs.self.overlays.modifications
+      inputs.self.overlays.additions
+    ];
+  };
 
   security.polkit.enable = true;
   security.pam.services.swaylock.text = "auth include login";
-  systemd.user.services.polkit-kde-authentication-agent-1 = {
-    description = "polkit-kde-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
+  systemd = {
+    user.services.polkit-kde-authentication-agent-1 = {
+      description = "polkit-kde-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+    oomd = {
+      enable = true;
+      enableRootSlice = true;
+      enableSystemSlice = true;
+      enableUserSlices = true;
     };
   };
 
