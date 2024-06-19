@@ -32,9 +32,7 @@
         {
           nixosConfigurations = {
             snoland = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs;
-              };
+              specialArgs.inputs = inputs;
               modules = [
                 ./hosts/snoland/configuration.nix
                 config.nixosModules.gruvbox
@@ -66,11 +64,12 @@
           pre-commit = {
             check.enable = true;
             settings.hooks = {
+              nil.enable = true;
+              shellcheck.enable = true;
               nixfmt = {
                 enable = true;
                 package = pkgs.nixfmt-rfc-style;
               };
-              nil.enable = true;
             };
           };
 
