@@ -13,16 +13,5 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
-(use-package lsp-nix
-  :ensure lsp-mode
-  :after (lsp-mode)
-  :demand t
-  :custom
-  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
-
-(use-package nix-mode
-  :hook (nix-mode . lsp-deferred)
-  :ensure t)
-
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

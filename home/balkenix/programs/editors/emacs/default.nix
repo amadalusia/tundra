@@ -9,6 +9,7 @@
       (require 'init-icomp "${./lisp/init-icomp.el}")
       (require 'init-lsp "${./lisp/init-lsp.el}")
       (require 'init-ui "${./lisp/init-ui.el}")
+      (require 'init-languages-nix "${./lisp/init-languages-nix.el}")
 
       ${builtins.readFile ./init.el}
     '';
