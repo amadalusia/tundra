@@ -11,5 +11,6 @@ _: {
         "video/webm" = [ "mpv.desktop" ];
       };
     };
+    userDirs.enable = true;
   };
 }

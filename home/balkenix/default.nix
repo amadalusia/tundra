@@ -25,6 +25,7 @@
     ./programs/misc/swaylock.nix
     ./programs/misc/retroarch.nix
     ./programs/misc/waybar.nix
+    ./programs/misc/mpd.nix
     ./gtk.nix
     ./qt.nix
     ./fonts.nix
