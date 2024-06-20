@@ -10,6 +10,7 @@
       (require 'init-lsp "${./lisp/init-lsp.el}")
       (require 'init-ui "${./lisp/init-ui.el}")
       (require 'init-languages-nix "${./lisp/init-languages-nix.el}")
+      (require 'init-languages-python "${./lisp/init-languages-python.el}")
 
       ${builtins.readFile ./init.el}
     '';
@@ -31,6 +32,7 @@
         typescript-mode
         go-mode
         clojure-mode
+        lsp-pyright
         lsp-mode
         lsp-ui
         lsp-ivy
