@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+
 qp() {
     if [ -z "${#+x}" ]
     then
