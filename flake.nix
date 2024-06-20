@@ -13,6 +13,7 @@
     river-bsp-layout.url = "github:areif-dev/river-bsp-layout";
     norshfetch.url = "github:balkenix/norshfetch";
     nixvim.url = "github:nix-community/nixvim";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   nixConfig = {
@@ -25,7 +26,10 @@
   outputs =
     inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ inputs.pre-commit-hooks-nix.flakeModule ];
+      imports = [
+        inputs.pre-commit-hooks-nix.flakeModule
+        inputs.treefmt-nix.flakeModule
+      ];
 
       flake =
         { config, ... }:
@@ -63,17 +67,24 @@
 
           pre-commit = {
             check.enable = true;
-            settings.hooks = {
-              nil.enable = true;
-              shellcheck.enable = true;
-              nixfmt = {
-                enable = true;
-                package = pkgs.nixfmt-rfc-style;
+            settings = {
+              hooks = {
+                nil.enable = true;
+                shellcheck.enable = true;
+                treefmt.enable = true;
               };
+              enabledPackages = [ config.treefmt.build.wrapper ];
             };
           };
 
+          treefmt = {
+            build.check = true;
+            programs.prettier.settings.plugins = [ "@prettier/plugin-bash" ];
+            projectRootFile = ./flake.nix;
+          };
+
           devShells.default = config.pre-commit.devShell;
+          formatter = pkgs.nixfmt-rfc-style;
         };
 
       systems = [ "x86_64-linux" ];
