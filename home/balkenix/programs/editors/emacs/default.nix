@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  inherit (builtins) toString;
+in
 {
   home.packages = with pkgs; [ texliveFull ];
 
@@ -11,6 +14,9 @@
       (require 'init-ui "${./lisp/init-ui.el}")
       (require 'init-languages-nix "${./lisp/init-languages-nix.el}")
       (require 'init-languages-python "${./lisp/init-languages-python.el}")
+
+      (add-to-list 'default-frame-alist
+             '(font . "${config.stylix.fonts.monospace.name}-${toString config.stylix.fonts.sizes.terminal}"))
 
       ${builtins.readFile ./init.el}
     '';

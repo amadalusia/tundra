@@ -17,7 +17,7 @@
   :ensure t
   :hook (after-init . doom-modeline-mode))
 
-(setq doom-modeline-height 30)
+(setq doom-modeline-height 40)
 (setq doom-modeline-icon t)
 (setq doom-modeline-lsp t)
 
