@@ -71,20 +71,25 @@
               hooks = {
                 nil.enable = true;
                 shellcheck.enable = true;
-                treefmt.enable = true;
+                treefmt = {
+                  enable = true;
+                  package = config.treefmt.build.wrapper;
+                };
               };
-              enabledPackages = [ config.treefmt.build.wrapper ];
             };
           };
 
           treefmt = {
             build.check = true;
-            programs.prettier.settings.plugins = [ "@prettier/plugin-bash" ];
+            programs = {
+              shellcheck.enable = true;
+              nixfmt-rfc-style.enable = true;
+            };
             projectRootFile = ./flake.nix;
           };
 
           devShells.default = config.pre-commit.devShell;
-          formatter = pkgs.nixfmt-rfc-style;
+          formatter = config.treefmt.build.wrapper;
         };
 
       systems = [ "x86_64-linux" ];
