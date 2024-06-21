@@ -71,6 +71,10 @@
               hooks = {
                 nil.enable = true;
                 shellcheck.enable = true;
+                nixfmt = {
+                  enable = true;
+                  package = pkgs.nixfmt-rfc-style;
+                };
                 treefmt = {
                   enable = true;
                   package = config.treefmt.build.wrapper;
