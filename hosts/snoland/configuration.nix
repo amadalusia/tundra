@@ -28,8 +28,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "FiraCode Nerd Font Mono";
-        package = pkgs.fira-code-nerdfont;
+        name = "Maple Mono NF";
+        package = pkgs.maple-mono-NF;
       };
       sansSerif = {
         name = "Inter";
@@ -38,6 +38,12 @@
       serif = {
         name = "Merriweather";
         package = pkgs.merriweather;
+      };
+      sizes = {
+        popups = 12;
+        terminal = 14;
+        applications = 12;
+        desktop = 12;
       };
     };
     homeManagerIntegration = {
