@@ -7,22 +7,30 @@
 let
   cfg = config.programs.armcord;
   jsonFormat = pkgs.formats.json { };
+
+  inherit (lib)
+    mkEnableOption
+    mkOption
+    literalExpression
+    mkIf
+    ;
+  inherit (lib.types) path listOf str;
 in
 {
   options.programs.armcord = {
-    enable = lib.mkEnableOption "Whether to enable armcord.";
+    enable = mkEnableOption "Whether to enable armcord.";
 
-    tokenFile = lib.mkOption {
-      type = lib.types.path;
-      default = "";
-      example = lib.literalExpression "config.sops.secrets.discordToken.path";
+    tokenFile = mkOption {
+      type = path;
+      default = "/";
+      example = literalExpression "config.sops.secrets.discordToken.path";
       description = "The file that contains the desired discord accounts token.";
     };
 
-    settings = lib.mkOption {
+    settings = mkOption {
       type = jsonFormat.type;
       default = { };
-      example = lib.literalExpression ''
+      example = literalExpression ''
         {
             windowStyle = "default";
             channel = "stable";
@@ -56,39 +64,39 @@ in
     };
 
     vencord = {
-      enable = lib.mkEnableOption "Whether to enable vencord";
-      themes = lib.mkOption {
-        type = with lib.types; listOf str;
+      enable = mkEnableOption "Whether to enable vencord";
+      themes = mkOption {
+        type = listOf str;
         default = [ ];
-        example = lib.literalExpression ''[ "https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css" ]'';
+        example = literalExpression ''[ "https://catppuccin.github.io/discord/dist/catppuccin-mocha-pink.theme.css" ]'';
       };
-      plugins = lib.mkOption {
-        type = with lib.types; listOf str;
+      plugins = mkOption {
+        type = listOf str;
         default = [ ];
-        example = lib.literalExpression ''[ "https://yellowsink.github.io/shelter-plugins/antitrack/" "https://yellowsink.github.io/shelter-plugins/no-devtools-detect" ]'';
+        example = literalExpression ''[ "https://yellowsink.github.io/shelter-plugins/antitrack/" "https://yellowsink.github.io/shelter-plugins/no-devtools-detect" ]'';
       };
     };
     shelter = {
-      enable = lib.mkEnableOption "Whether to enable shelter";
-      plugins = lib.mkOption {
-        type = with lib.types; listOf str;
+      enable = mkEnableOption "Whether to enable shelter";
+      plugins = mkOption {
+        type = listOf str;
         default = [ ];
-        example = lib.literalExpression ''[ "https://yellowsink.github.io/shelter-plugins/antitrack/" "https://yellowsink.github.io/shelter-plugins/no-devtools-detect" ]'';
+        example = literalExpression ''[ "https://yellowsink.github.io/shelter-plugins/antitrack/" "https://yellowsink.github.io/shelter-plugins/no-devtools-detect" ]'';
       };
     };
-    extraCss = lib.mkOption {
-      type = lib.types.str;
+    extraCss = mkOption {
+      type = str;
       default = "";
       example = ''@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha-mauve.theme.css")'';
     };
-    extraJs = lib.mkOption {
-      type = lib.types.str;
+    extraJs = mkOption {
+      type = str;
       default = "";
       example = ''console.log("hello world!");'';
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     programs.armcord.settings.mods =
       if cfg.vencord.enable then
         "vencord"
@@ -107,7 +115,7 @@ in
           cp -f ${config.xdg.configHome}/ArmCord_hm/hm/main.js ${config.xdg.configHome}/ArmCord/plugins/loader/hm/main.js
           cp -f ${config.xdg.configHome}/ArmCord_hm/hm/main.css ${config.xdg.configHome}/ArmCord/plugins/loader/hm/main.css
 
-          ${lib.optionalString (lib.isString cfg.tokenFile) tokenOptionalString}
+          ${lib.optionalString (cfg.tokenFile != "/") tokenOptionalString}
 
           "${pkgs.armcord}/bin/armcord"
         '';
@@ -301,7 +309,7 @@ in
               pluginCode;
           in
           ''
-            ${lib.optionalString (lib.isString cfg.tokenFile) tokenOptionalString}
+            ${lib.optionalString (cfg.tokenFile != "/") tokenOptionalString}
             ${lib.optionalString (cfg.settings.mods == "shelter") shelterOptionalString}
             ${lib.optionalString (cfg.settings.mods == "vencord") vencordOptionalString}
             ${cfg.extraJs}
