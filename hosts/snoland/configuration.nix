@@ -54,10 +54,7 @@
       console.enable = true;
       grub.enable = true;
     };
-    gruvbox = {
-      enable = true;
-      wallpaper = ../../wallpapers/gruvbox/gruvbox_spac.jpg;
-    };
+    nord.enable = true;
     polarity = "dark";
   };
 

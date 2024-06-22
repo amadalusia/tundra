@@ -39,7 +39,7 @@
               specialArgs.inputs = inputs;
               modules = [
                 ./hosts/snoland/configuration.nix
-                config.nixosModules.gruvbox
+                config.nixosModules.nord
               ];
             };
           };
@@ -71,23 +71,22 @@
               hooks = {
                 nil.enable = true;
                 shellcheck.enable = true;
-                nixfmt = {
-                  enable = true;
-                  package = pkgs.nixfmt-rfc-style;
-                };
                 treefmt = {
                   enable = true;
                   package = config.treefmt.build.wrapper;
+                  settings.formatters = [ pkgs.nixfmt-rfc-style ];
                 };
               };
             };
           };
 
           treefmt = {
-            build.check = true;
             programs = {
               shellcheck.enable = true;
-              nixfmt-rfc-style.enable = true;
+              nixfmt-rfc-style = {
+                enable = true;
+                package = pkgs.nixfmt-rfc-style;
+              };
             };
             projectRootFile = ./flake.nix;
           };

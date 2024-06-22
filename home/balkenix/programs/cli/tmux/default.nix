@@ -23,5 +23,4 @@
       }
     ];
   };
-  stylix.targets.tmux.enable = true;
 }
