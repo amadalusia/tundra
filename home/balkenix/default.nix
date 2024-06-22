@@ -21,6 +21,7 @@
     ./programs/misc/yazi.nix
     ./programs/misc/imv.nix
     ./programs/misc/vesktop.nix
+    ./programs/misc/armcord.nix
     ./programs/misc/swayidle.nix
     ./programs/misc/swaylock.nix
     ./programs/misc/retroarch.nix
