@@ -29,7 +29,6 @@
     ./programs/misc/mpd.nix
     ./gtk.nix
     ./qt.nix
-    ./fonts.nix
     ./xdg.nix
   ];
 
