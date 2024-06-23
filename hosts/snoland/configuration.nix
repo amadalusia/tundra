@@ -175,6 +175,12 @@
   # enable OpenGL
   hardware.opengl.enable = true;
 
+  # fonts
+  fonts = {
+    packages = [ pkgs.noto-fonts-cjk ];
+    fontconfig.enable = true;
+  };
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
