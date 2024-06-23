@@ -7,7 +7,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs-unstable;
+    package = pkgs.emacs-gtk;
     extraConfig = ''
       (require 'init-icomp "${./lisp/init-icomp.el}")
       (require 'init-lsp "${./lisp/init-lsp.el}")
@@ -65,7 +65,6 @@ in
     enable = true;
     defaultEditor = true;
     startWithUserSession = "graphical";
-    client.enable = true;
   };
 
   stylix.targets.emacs.enable = true;

@@ -9,7 +9,33 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-(setq-default indent-tabs-mode nil)
+(use-package emacs
+  :custom
+  (custom-file (make-temp-file "emacs-custom"))
+  (display-line-numbers-type 'relative)
+  (indent-tabs-mode nil)
+  ;; (package-enable-at-startup nil)
+  (make-backup-files nil)
+  (auto-save-default nil)
+  (create-lockfiles nil)
+  (dired-kill-when-opening-new-dired-buffer t)
+  (treesit-font-lock-level 4)
+  (history-delete-duplicates t)
+  (use-dialog-box nil)
+  :config
+  (global-visual-line-mode 1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (tooltip-mode -1)
+  (global-hl-line-mode 1)
+  (savehist-mode 1)
+  (save-place-mode 1)
+  :hook
+  ((conf-mode prog-mode text-mode) . display-line-numbers-mode)
+  :bind ("C-c t" . (lambda ()
+                     (interactive)
+                     (call-process-shell-command "foot &" nil 0))))
 
 (dired-async-mode 1)
 
