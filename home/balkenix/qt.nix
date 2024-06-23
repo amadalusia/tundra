@@ -1,7 +1,4 @@
 { config, pkgs, ... }:
 {
-  qt = {
-    enable = true;
-    style.name = "Kvantum";
-  };
+  stylix.targets.kde.enable = true;
 }
