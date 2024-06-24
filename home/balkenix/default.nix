@@ -23,7 +23,7 @@
     ./programs/misc/vesktop.nix
     ./programs/misc/armcord.nix
     ./programs/misc/swayidle.nix
-    ./programs/misc/swaylock.nix
+    ./programs/misc/hyprlock.nix
     ./programs/misc/retroarch.nix
     ./programs/misc/waybar.nix
     ./programs/misc/mpd.nix

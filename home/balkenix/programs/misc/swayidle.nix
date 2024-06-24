@@ -5,7 +5,7 @@
     events = [
       {
         event = "before-sleep";
-        command = "${config.programs.swaylock.package}/bin/swaylock -fFe";
+        command = "${config.programs.hyprlock.package}/bin/hyprlock";
       }
       {
         event = "lock";
@@ -15,8 +15,8 @@
     timeouts = [
       {
         timeout = 100;
-        command = "${pkgs.brightnessctl}/bin/brightnessctl set 20%-";
-        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl set +20%";
+        command = "${pkgs.brightnessctl}/bin/brightnessctl set 30%";
+        resumeCommand = "${pkgs.brightnessctl}/bin/brightnessctl set 60%";
       }
       {
         timeout = 300;
