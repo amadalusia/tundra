@@ -28,8 +28,8 @@
         package = pkgs.noto-fonts-color-emoji;
       };
       monospace = {
-        name = "Maple Mono NF";
-        package = pkgs.maple-mono-NF;
+        name = "SpaceMono Nerd Font Mono";
+        package = pkgs.space-mono-nerd;
       };
       sansSerif = {
         name = "Inter";
@@ -118,7 +118,7 @@
   };
 
   security.polkit.enable = true;
-  security.pam.services.swaylock.text = "auth include login";
+  security.pam.services.hyprlock.text = "auth include login";
   systemd = {
     user.services.polkit-kde-authentication-agent-1 = {
       description = "polkit-kde-authentication-agent-1";

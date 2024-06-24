@@ -24,7 +24,12 @@
   };
 
   outputs =
-    inputs@{ flake-parts, nixpkgs, ... }:
+    inputs@{
+      self,
+      flake-parts,
+      nixpkgs,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.pre-commit-hooks-nix.flakeModule
@@ -62,6 +67,7 @@
             overlays = [
               inputs.emacs-overlay.overlays.default
               inputs.norshfetch.overlays.default
+              self.overlays.additions
             ];
           };
 
@@ -90,6 +96,8 @@
             };
             projectRootFile = ./flake.nix;
           };
+
+          packages = import ./pkgs { inherit pkgs; };
 
           devShells.default = config.pre-commit.devShell;
           formatter = config.treefmt.build.wrapper;
