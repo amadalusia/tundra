@@ -1,10 +1,19 @@
-_: {
+{ config, ... }:
+let
+  inherit (config.stylix.base16Scheme)
+    base00
+    base06
+    base07
+    base0B
+    ;
+in
+{
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 300;
+        grace = 0;
         hide_cursor = true;
         no_fade_in = false;
       };
@@ -24,12 +33,26 @@ _: {
           monitor = "";
           dots_center = true;
           fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
+          font_color = "0x${base06}ff";
+          font_family = "SpaceMono Nerd Font Mono";
+          inner_color = "0x${base07}ff";
+          outer_color = "0x${base00}ff";
+          fail_color = "0x${base0B}ff";
           outline_thickness = 5;
-          placeholder_text = "Password...";
+          placeholder_text = "Type your password...";
+          fail_text = "Fail $ATTEMPTS: $FAIL";
           shadow_passes = 2;
+        }
+      ];
+
+      label = [
+        {
+          monitor = "";
+          font_size = 20;
+          font_family = "SpaceMono Nerd Font Mono";
+          text = "wsg @$USER, it's $TIME rn";
+          halign = "center";
+          color = "0x${base06}ff";
         }
       ];
     };
