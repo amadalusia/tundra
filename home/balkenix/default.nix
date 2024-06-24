@@ -24,6 +24,7 @@
     ./programs/misc/armcord.nix
     ./programs/misc/swayidle.nix
     ./programs/misc/hyprlock.nix
+    ./programs/misc/hyprpaper.nix
     ./programs/misc/retroarch.nix
     ./programs/misc/waybar.nix
     ./programs/misc/mpd.nix

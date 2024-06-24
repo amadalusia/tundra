@@ -12,8 +12,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    swaybg
-    grim
     wl-clipboard
     libnotify
     pavucontrol
@@ -96,7 +94,7 @@ in
         default-layout = "bsp-layout";
         spawn = [
           "'${river-bsp-layout}/bin/river-bsp-layout --inner-gap 6 --outer-gap 6 --split-perc 0.5 &'"
-          "'${pkgs.swaybg}/bin/swaybg -i ${config.stylix.image}'"
+          "'${config.services.hyprpaper.package}'"
           "'${config.programs.waybar.package}/bin/waybar'"
         ];
         border-color-focused = "0x${colors.base0B}";
