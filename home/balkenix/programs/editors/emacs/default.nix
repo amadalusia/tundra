@@ -8,11 +8,8 @@ in
     extraPackages = tpkgs: { inherit (tpkgs) collection-fontsrecommended; };
   };
 
-  programs.emacs = {
+  services.emacs = {
     enable = true;
-    package = pkgs.balkemacs;
-    extraPackages = epkgs: with epkgs; [ use-package ];
+    package = pkgs.balkemacs.override { };
   };
-
-  stylix.targets.emacs.enable = true;
 }

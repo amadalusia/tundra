@@ -15,6 +15,4 @@ _: {
       };
     };
   };
-
-  stylix.targets.alacritty.enable = true;
 }

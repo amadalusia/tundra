@@ -1,8 +1,4 @@
 { config, pkgs, ... }:
-let
-  colours = config.stylix.base16Scheme;
-  inherit (config.stylix) fonts;
-in
 {
   programs.waybar = {
     enable = true;
@@ -103,16 +99,12 @@ in
     ];
     style = ''
       * {
-        font-family: ${fonts.monospace.name};
         font-size: 15px;
         border: none;
         border-radius: 0;
       }
 
       window#waybar {
-        background-color: #${colours.base00};
-        color: #${colours.base05};
-        border-bottom: 3px solid #${colours.base01};
         margin: 0px 10px;
       }
 
@@ -125,41 +117,33 @@ in
       #backlight,
       #memory {
         padding: 0px 8px;
-        color: #${colours.base00};
       }
 
       #custom-date {
-        background-color: #${colours.base08};
         border-bottom: none;
       }
 
       #custom-time {
-        background-color: #${colours.base09};
         border-bottom: none;
       }
 
       #network {
-        background-color: #${colours.base0A};
         border-bottom: none;
       }
 
       #battery {
-        background-color: #${colours.base0B};
         border-bottom: none;
       }
 
       #pulseaudio {
-        background-color: #${colours.base0C};
         border-bottom: none;
       }
 
       #backlight {
-        background-color: #${colours.base0D};
         border-bottom: none;
       }
 
       #memory {
-        background-color: #${colours.base0E};
         border-bottom: none;
       }
 
@@ -168,12 +152,9 @@ in
       }
 
       #tags button.focused {
-        background-color: #${colours.base01};
       }
 
       #tags button.urgent {
-        background-color: #${colours.base09};
-        color: #${colours.base00};
       }
     '';
   };

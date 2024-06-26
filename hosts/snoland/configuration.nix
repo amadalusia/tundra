@@ -12,51 +12,10 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.disko.nixosModules.disko
-    inputs.stylix.nixosModules.stylix
     ./disk-config.nix
     ./certificates.nix
     ./hardware-configuration.nix
   ];
-
-  stylix = {
-    enable = true;
-    autoEnable = false;
-    cursor.size = 28;
-    fonts = {
-      emoji = {
-        name = "Noto Color Emoji";
-        package = pkgs.noto-fonts-color-emoji;
-      };
-      monospace = {
-        name = "SpaceMono Nerd Font Mono";
-        package = pkgs.space-mono-nerd;
-      };
-      sansSerif = {
-        name = "Inter";
-        package = pkgs.inter;
-      };
-      serif = {
-        name = "Merriweather";
-        package = pkgs.merriweather;
-      };
-      sizes = {
-        popups = 12;
-        terminal = 14;
-        applications = 12;
-        desktop = 12;
-      };
-    };
-    homeManagerIntegration = {
-      autoImport = true;
-      followSystem = true;
-    };
-    targets = {
-      console.enable = true;
-      grub.enable = true;
-    };
-    nord.enable = true;
-    polarity = "dark";
-  };
 
   # enable flakes lmao
   nix = {

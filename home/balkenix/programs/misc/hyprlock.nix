@@ -1,12 +1,4 @@
 { config, ... }:
-let
-  inherit (config.stylix.base16Scheme)
-    base00
-    base06
-    base07
-    base0B
-    ;
-in
 {
   programs.hyprlock = {
     enable = true;
@@ -33,11 +25,6 @@ in
           monitor = "";
           dots_center = true;
           fade_on_empty = false;
-          font_color = "0x${base06}ff";
-          font_family = "SpaceMono Nerd Font Mono";
-          inner_color = "0x${base07}ff";
-          outer_color = "0x${base00}ff";
-          fail_color = "0x${base0B}ff";
           outline_thickness = 5;
           placeholder_text = "Type your password...";
           fail_text = "Fail $ATTEMPTS: $FAIL";
@@ -52,7 +39,6 @@ in
           font_family = "SpaceMono Nerd Font Mono";
           text = "wsg @$USER, it's $TIME rn";
           halign = "center";
-          color = "0x${base06}ff";
         }
       ];
     };

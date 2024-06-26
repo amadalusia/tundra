@@ -7,7 +7,6 @@
 let
   screenshot_output = "${config.xdg.userDirs.pictures}/Screenshots/";
   river-bsp-layout = inputs.river-bsp-layout.packages.${pkgs.system}.default;
-  colors = config.stylix.base16Scheme;
 in
 {
   home.packages = with pkgs; [
@@ -95,12 +94,9 @@ in
         default-layout = "bsp-layout";
         spawn = [
           "'${river-bsp-layout}/bin/river-bsp-layout --inner-gap 10 --outer-gap 10 --split-perc 0.5 &'"
-          "'${config.services.hyprpaper.package}'"
           "'${config.programs.waybar.package}/bin/waybar'"
           "'${pkgs.networkmanagerapplet}/bin/nm-applet'"
         ];
-        border-color-focused = "0x${colors.base0B}";
-        border-color-unfocused = "0x${colors.base03}";
       };
     };
 

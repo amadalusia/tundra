@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
+    inputs.self.homeManagerModules.font-module
+    inputs.nix-colors.homeManagerModules.default
     ./programs/wm/river
     ./programs/editors/emacs
     ./programs/editors/nixvim.nix
@@ -32,6 +34,14 @@
     ./qt.nix
     ./xdg.nix
   ];
+
+  fonts = {
+    enable = true;
+    monospace = {
+      name = "SpaceMono Nerd Font";
+      package = pkgs.space-mono-nerd;
+    };
+  };
 
   home.packages = with pkgs; [
     tomato-c

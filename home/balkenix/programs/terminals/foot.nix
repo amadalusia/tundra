@@ -1,4 +1,5 @@
-_: {
+{ config, ... }:
+{
   programs.foot = {
     enable = true;
     server.enable = true;
@@ -6,9 +7,8 @@ _: {
       main = {
         term = "xterm-256color";
         pad = "10x10";
+        font = config.fonts.monospace.name;
       };
     };
   };
-
-  stylix.targets.foot.enable = true;
 }

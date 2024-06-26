@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    stylix.url = "github:danth/stylix";
     pre-commit-hooks-nix.url = "github:cachix/pre-commit-hooks.nix";
     disko.url = "github:nix-community/disko";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
@@ -14,6 +13,7 @@
     norshfetch.url = "github:balkenix/norshfetch";
     nixvim.url = "github:nix-community/nixvim";
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   nixConfig = {
@@ -41,11 +41,10 @@
         {
           nixosConfigurations = {
             snoland = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs.inputs = inputs;
-              modules = [
-                ./hosts/snoland/configuration.nix
-                config.nixosModules.nord
-              ];
+              specialArgs = {
+                inherit inputs;
+              };
+              modules = [ ./hosts/snoland/configuration.nix ];
             };
           };
 

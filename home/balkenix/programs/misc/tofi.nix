@@ -18,6 +18,4 @@ _: {
       padding-right = 10;
     };
   };
-
-  stylix.targets.tofi.enable = true;
 }
