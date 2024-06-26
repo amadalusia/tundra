@@ -1,0 +1,47 @@
+#+TITLE: Balkemacs
+#+AUTHOR: Åsmund Balkesen
+#+property: header-args :tangle yes
+
+* Emacs configuration
+#+BEGIN_SRC elisp
+	(use-package emacs
+	  :custom
+       2   (custom-file (make-temp-file "emacs-custom"))
+	  (display-line-numbers-type 'relative)
+	  (display-line-numbers-width 3)
+	  (indent-tabs-mode nil)
+	  ;; (package-enable-at-startup nil)
+	  (make-backup-files nil)
+	  (auto-save-default nil)
+	  (create-lockfiles nil)
+	  (dired-kill-when-opening-new-dired-buffer t)
+	  (treesit-font-lock-level 4)
+	  (history-delete-duplicates t)
+	  (use-dialog-box nil)
+	  (inhibit-startup-screen t)
+	  :config
+	  (electric-pair-mode 1)
+	  (global-visual-line-mode 1)
+	  (menu-bar-mode -1)
+	  (scroll-bar-mode -1)
+	  (tool-bar-mode -1)
+	  (tooltip-mode -1)
+	  (global-hl-line-mode 1)
+	  (savehist-mode 1)
+	  (save-place-mode 1)
+	  :hook
+	  ((conf-mode prog-mode text-mode) . display-line-numbers-mode)
+	  :bind ("C-c t" . (lambda ()
+			     (interactive)
+			     (let* ((project (project-current))
+				    (default-directory (if project
+							   (project-root project)
+							 default-directory)))
+			       (call-process-shell-command "foot &" nil 0)))))
+#+END_SRC
+
+* Configuring nix-mode
+#+BEGIN_SRC elisp
+  (use-package nix-ts-mode
+ :mode "\\.nix\\'")
+#+END_SRC

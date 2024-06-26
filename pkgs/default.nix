@@ -1,4 +1,5 @@
 { pkgs, ... }:
 {
   space-mono-nerd = pkgs.nerdfonts.override { fonts = [ "SpaceMono" ]; };
+  balkemacs = pkgs.callPackage ./emacs { };
 }
