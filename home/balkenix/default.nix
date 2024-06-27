@@ -38,8 +38,9 @@
   fonts = {
     enable = true;
     monospace = {
-      name = "SpaceMono Nerd Font";
+      name = "SpaceMono Nerd Font Mono";
       package = pkgs.space-mono-nerd;
+      size = 14;
     };
   };
 

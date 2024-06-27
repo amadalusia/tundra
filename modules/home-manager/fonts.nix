@@ -8,6 +8,7 @@ let
   cfg = config.fonts;
   inherit (lib) mkOption mkPackageOption;
   inherit (lib.types) str package;
+  inherit (lib.types.ints) unsigned;
 in
 {
   options.fonts = {
@@ -17,6 +18,12 @@ in
         type = str;
         default = "Ubuntu";
         description = ''Sets the name for a sans font'';
+      };
+
+      size = mkOption {
+        type = unsigned;
+        default = 12;
+        description = "Sets the size of the sans serif font";
       };
 
       package = mkPackageOption pkgs "ubuntu_font_family" { };
@@ -29,6 +36,12 @@ in
         description = ''Sets the name for the monospace font'';
       };
 
+      size = mkOption {
+        type = unsigned;
+        default = 12;
+        description = "Sets the size of the monospace font";
+      };
+
       package = mkPackageOption pkgs "source-code-pro" { };
     };
 
@@ -39,6 +52,12 @@ in
         description = ''Sets the name for the serif font'';
       };
 
+      size = mkOption {
+        type = unsigned;
+        default = 12;
+        description = "Sets the size of the serif font";
+      };
+
       package = mkPackageOption pkgs "noto-fonts" { };
     };
 
@@ -47,6 +66,12 @@ in
         type = str;
         default = "Noto Color Emoji";
         description = ''Sets the name for the emoji font'';
+      };
+
+      size = mkOption {
+        type = unsigned;
+        default = 12;
+        description = "Sets the size of the emoji font";
       };
 
       package = mkPackageOption pkgs "noto-fonts-color-emoji" { };
