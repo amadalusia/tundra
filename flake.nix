@@ -43,6 +43,7 @@
             snoland = inputs.nixpkgs.lib.nixosSystem {
               specialArgs = {
                 inherit inputs;
+                inherit (inputs) nix-colors;
               };
               modules = [ ./hosts/snoland/configuration.nix ];
             };
@@ -66,6 +67,7 @@
             overlays = [
               inputs.emacs-overlay.overlays.default
               inputs.norshfetch.overlays.default
+              inputs.river-bsp-layout.overlays.default
               self.overlays.additions
             ];
           };

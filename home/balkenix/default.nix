@@ -1,8 +1,16 @@
-{ inputs, pkgs, ... }:
+{
+  nix-colors,
+  inputs,
+  pkgs,
+  ...
+}:
+let
+  nix-colors-lib = nix-colors.lib.contrib { inherit pkgs; };
+in
 {
   imports = [
     inputs.self.homeManagerModules.font-module
-    inputs.nix-colors.homeManagerModules.default
+    nix-colors.homeManagerModules.default
     ./programs/wm/river
     ./programs/editors/emacs
     ./programs/editors/nixvim.nix
@@ -34,6 +42,8 @@
     ./qt.nix
     ./xdg.nix
   ];
+
+  colorScheme = nix-colors.colorSchemes.tokyo-night-dark;
 
   fonts = {
     enable = true;

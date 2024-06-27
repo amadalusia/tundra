@@ -6,7 +6,7 @@
 }:
 let
   screenshot_output = "${config.xdg.userDirs.pictures}/Screenshots/";
-  river-bsp-layout = inputs.river-bsp-layout.packages.${pkgs.system}.default;
+  inherit (config.colorScheme) palette;
 in
 {
   home.packages = with pkgs; [
@@ -81,8 +81,8 @@ in
             "${mod}+Shift j" = "resize vertical -96";
             "${mod}+Shift k" = "resize vertical 96";
             "${mod}+Shift l" = "resize horizontal 96";
-            "${mod} Tab" = "swap next";
-            "${mod}+Shift Tab" = "swap previous";
+            "${mod} Tab" = "focus-view next";
+            "${mod}+Shift Tab" = "focus-view previous";
           };
         };
         map-pointer = {
@@ -93,10 +93,14 @@ in
         };
         default-layout = "bsp-layout";
         spawn = [
-          "'${river-bsp-layout}/bin/river-bsp-layout --inner-gap 10 --outer-gap 10 --split-perc 0.5 &'"
+          "'${pkgs.river-bsp-layout}/bin/river-bsp-layout --inner-gap 10 --outer-gap 10 --split-perc 0.5 &'"
           "'${config.programs.waybar.package}/bin/waybar'"
           "'${pkgs.networkmanagerapplet}/bin/nm-applet'"
         ];
+
+        border-color = "0x${palette.base0B}";
+        border-color-unfocused = "0x${palette.base02}";
+        border-color-urgent = "0x${palette.base0F}";
       };
     };
 

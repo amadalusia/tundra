@@ -1,4 +1,8 @@
 { config, pkgs, ... }:
+let
+  inherit (config.colorScheme) palette;
+  inherit (config) fonts;
+in
 {
   programs.waybar = {
     enable = true;
@@ -98,64 +102,78 @@
       }
     ];
     style = ''
-      * {
-        font-size: 15px;
-        border: none;
-        border-radius: 0;
-      }
+            * {
+              font-size: 15px;
+              border: none;
+              border-radius: 0;
+            }
 
-      window#waybar {
-        margin: 0px 10px;
-      }
+            window#waybar {
+              background-color: #${palette.base00};
+      	color: #${palette.base05};
+      	font-family: "${fonts.monospace.name}";
+              margin: 0px 10px;
+            }
 
-      #custom-date,
-      #custom-time,
-      #network,
-      #battery,
-      #tray,
-      #pulseaudio,
-      #backlight,
-      #memory {
-        padding: 0px 8px;
-      }
+            #custom-date,
+            #custom-time,
+            #network,
+            #battery,
+            #tray,
+            #pulseaudio,
+            #backlight,
+            #memory {
+              padding: 0px 8px;
+            }
 
-      #custom-date {
-        border-bottom: none;
-      }
+            #custom-date {
+              border-bottom: none;
+            }
 
-      #custom-time {
-        border-bottom: none;
-      }
+            #custom-time {
+              border-bottom: none;
+            }
 
-      #network {
-        border-bottom: none;
-      }
+            #network {
+              border-bottom: none;
+            }
 
-      #battery {
-        border-bottom: none;
-      }
+            #battery {
+              border-bottom: none;
+            }
 
-      #pulseaudio {
-        border-bottom: none;
-      }
+            #pulseaudio {
+              border-bottom: none;
+            }
 
-      #backlight {
-        border-bottom: none;
-      }
+            #backlight {
+              border-bottom: none;
+            }
 
-      #memory {
-        border-bottom: none;
-      }
+            #memory {
+              border-bottom: none;
+            }
 
-      #tags button {
-        padding: 0px 8px;
-      }
+            #tags button {
+            	color: #${palette.base05}; 
+              padding: 0px 8px;
+            }
 
-      #tags button.focused {
-      }
+            #tags button:hover {
+            	color: #${palette.base00};
+            	background-color: #${palette.base05};
+              padding: 0px 8px;
+            }
 
-      #tags button.urgent {
-      }
+            #tags button.focused {
+              background-color: #${palette.base03};
+              color: #${palette.base05}; 
+            }
+
+            #tags button.urgent {
+              color: #${palette.base00};
+      	background-color: #${palette.base0F}
+            }
     '';
   };
 }

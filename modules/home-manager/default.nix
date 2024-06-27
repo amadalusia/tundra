@@ -3,4 +3,5 @@
   vesktop = import ./vesktop.nix;
   armcord = import ./armcord.nix;
   font-module = import ./fonts.nix;
+  wallpaper = import ./wallpaper.nix;
 }

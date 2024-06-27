@@ -1,4 +1,8 @@
-_: {
+{ config, ... }:
+let
+  inherit (config.colorScheme) palette;
+in
+{
   programs.tofi = {
     enable = true;
     settings = {

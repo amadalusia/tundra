@@ -6,6 +6,7 @@
   lib,
   pkgs,
   inputs,
+  nix-colors,
   ...
 }:
 {
@@ -70,6 +71,7 @@
     overlays = [
       inputs.emacs-overlay.overlays.default
       inputs.norshfetch.overlays.default
+      inputs.river-bsp-layout.overlays.default
       inputs.self.overlays.unstable-packages
       inputs.self.overlays.modifications
       inputs.self.overlays.additions
@@ -201,6 +203,7 @@
     useUserPackages = true;
     extraSpecialArgs = {
       inherit inputs;
+      inherit nix-colors;
     };
     backupFileExtension = "backup";
     users.balkenix = import ../../home/balkenix;
